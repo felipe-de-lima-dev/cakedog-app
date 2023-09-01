@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CakeDog</string>
+    <string name="login">Login</string>
+    <string name="pw">Senha</string>
+    <string name="btn_enter">Entrar</string>
+    <string name="btn_create_account">Criar conta</string>
 </resources>

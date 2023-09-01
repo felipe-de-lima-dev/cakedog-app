@@ -5,4 +5,83 @@
     tools:ignore="UsingOnClickInXml"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    android:background="@color/light_brown"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/logo"
+        android:contentDescription="@string/app_name"
+        />
+
+    <EditText
+        android:id="@+id/txtUser"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        android:hint="@string/login"
+        android:inputType="textPersonName"
+        android:autofillHints="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/txtPw"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtUser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:hint="@string/pw"
+        android:inputType="textPassword"
+        android:autofillHints="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:id="@+id/btnToRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtPw"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnEnter"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/btn_create_account"
+        android:textAllCaps="false"
+        android:textColor="@color/blue_link"
+        android:background="@drawable/btn_link_style"
+        android:textSize="20sp"
+        android:onClick="toRegister"
+        />
+
+    <Button
+        android:id="@+id/btnEnter"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnToRegister"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/btn_enter"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:background="@drawable/btn_round_corner"
+        android:onClick="toHome"
+        />
+</android.support.constraint.ConstraintLayout>
