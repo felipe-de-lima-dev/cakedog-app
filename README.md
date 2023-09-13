@@ -1,3 +1,3 @@
 # APP CakeDog
 
-Aplicativo mobile de encomenda de bolos para para cachorro.
+Aplicativo mobile de encomenda de bolos para cachorro.
