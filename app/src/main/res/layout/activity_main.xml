@@ -5,7 +5,7 @@
     tools:ignore="UsingOnClickInXml"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_brown"
+    android:background="@color/brown_opaque"
     tools:context=".MainActivity">
 
     <ImageView
@@ -16,72 +16,93 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/logo"
+        android:background="@drawable/logo_oficial"
         android:contentDescription="@string/app_name"
         />
 
     <EditText
         android:id="@+id/txtUser"
         android:layout_width="350dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         app:layout_constraintTop_toBottomOf="@id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="50dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:drawablePadding="12dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_email_icon"
         android:hint="@string/login"
         android:inputType="textPersonName"
         android:autofillHints="true"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="22sp"
+        android:fontFamily="@font/raleway_regular"
         />
 
     <EditText
         android:id="@+id/txtPw"
         android:layout_width="350dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         app:layout_constraintTop_toBottomOf="@id/txtUser"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:drawablePadding="12dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_lock_icon"
         android:hint="@string/pw"
         android:inputType="textPassword"
         android:autofillHints="false"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="22sp"
+        android:fontFamily="@font/raleway_regular"
         />
 
-    <Button
-        android:id="@+id/btnToRegister"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/txtPw"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/btnEnter"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/btn_create_account"
-        android:textAllCaps="false"
-        android:textColor="@color/blue_link"
-        android:background="@drawable/btn_link_style"
-        android:textSize="20sp"
-        android:onClick="toRegister"
-        />
-
-    <Button
-        android:id="@+id/btnEnter"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnToRegister"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/btn_enter"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:background="@drawable/btn_round_corner"
-        android:onClick="toHome"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPw"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="200dp"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btnToRegister"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/btn_create_account"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:fontFamily="@font/raleway_bold"
+            android:background="@drawable/btn_round_corner"
+            android:textSize="26sp"
+            android:onClick="toRegister"
+            />
+
+        <Button
+            android:id="@+id/btnEnter"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/btn_enter"
+            android:textAllCaps="false"
+            android:textSize="26sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/raleway_bold"
+            android:background="@drawable/btn_round_corner"
+            android:onClick="toHome"
+            />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -9,5 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue_link">#2952BC</color>
     <color name="transparent">#00B3B3B3</color>
-    <color name="light_brown">#F3A480</color>
+    <color name="light_brown">#C6521E</color>
+    <color name="light_brown_opaque">#9FC6521E</color>
+    <color name="brown_opaque">#C8FF9E74</color>
+    <color name="grey">#858585</color>
 </resources>

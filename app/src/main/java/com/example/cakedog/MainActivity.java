@@ -42,6 +42,5 @@ public class MainActivity extends AppCompatActivity {
     public void toRegister(View v) {
         Intent change = new Intent(MainActivity.this, RegisterUser.class);
         startActivity(change);
-        finish();
     }
 }
