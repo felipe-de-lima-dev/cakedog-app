@@ -4,4 +4,18 @@
     <string name="pw">Senha</string>
     <string name="btn_enter">Entrar</string>
     <string name="btn_create_account">Criar conta</string>
+    <string name="title_reg">Criar uma conta</string>
+    <string name="txt_name">Nome completo</string>
+    <string name="txt_cpf">CPF</string>
+    <string name="txt_fone">Telefone</string>
+    <string name="txt_email">E-mail</string>
+    <string name="txt_pw">Senha</string>
+    <string name="title_end">Endereço</string>
+    <string name="txt_logr">Logradouro</string>
+    <string name="txt_endNum">Nº</string>
+    <string name="txt_bairro">Bairro</string>
+    <string name="txt_cep">CEP</string>
+    <string name="txt_city">Cidade</string>
+    <string name="txt_uf">UF</string>
+    <string name="btn_save">Criar conta</string>
 </resources>

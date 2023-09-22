@@ -1,9 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UsingOnClickInXml"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_brown"
     tools:context=".RegisterUser">
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_reg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/title_reg"
+                android:textSize="40sp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                />
+
+            <EditText
+                android:id="@+id/txt_name"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/txt_name"
+                android:textSize="20sp"
+                android:inputType="textPersonName"
+                android:autofillHints="true"
+                />
+
+            <EditText
+                android:id="@+id/txt_cpf"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/txt_cpf"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:autofillHints="true"
+                />
+
+            <EditText
+                android:id="@+id/txt_fone"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/txt_fone"
+                android:textSize="20sp"
+                android:inputType="phone"
+                android:autofillHints="true"
+                />
+
+            <EditText
+                android:id="@+id/txt_email"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/txt_email"
+                android:textSize="20sp"
+                android:inputType="textEmailAddress"
+                android:autofillHints="true"
+                />
+
+            <EditText
+                android:id="@+id/txt_pw"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_gravity="center_horizontal"
+                android:hint="@string/txt_pw"
+                android:textSize="20sp"
+                android:inputType="textPassword"
+                android:autofillHints="true"
+                />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/title_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="30dp"
+                    android:text="@string/title_end"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    />
+
+                <EditText
+                    android:id="@+id/txt_logr"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_end"
+                    android:hint="@string/txt_logr"
+                    android:textSize="20sp"
+                    android:inputType="text"
+                    android:autofillHints="true"
+                    />
+
+                <EditText
+                    android:id="@+id/txt_endNum"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/txt_logr"
+                    app:layout_constraintTop_toBottomOf="@+id/title_end"
+                    android:hint="@string/txt_endNum"
+                    android:textSize="20sp"
+                    android:inputType="numberSigned"
+                    android:autofillHints="true"
+                    />
+
+                <EditText
+                    android:id="@+id/txt_bairro"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_logr"
+                    android:hint="@string/txt_bairro"
+                    android:textSize="20sp"
+                    android:inputType="text"
+                    android:autofillHints="true"
+                    />
+
+                <EditText
+                    android:id="@+id/txt_cep"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_bairro"
+                    android:hint="@string/txt_cep"
+                    android:textSize="20sp"
+                    android:inputType="textPostalAddress"
+                    android:autofillHints="true"
+                    />
+
+                <EditText
+                    android:id="@+id/txt_city"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_cep"
+                    android:hint="@string/txt_city"
+                    android:textSize="20sp"
+                    android:inputType="text"
+                    android:autofillHints="true"
+                    />
+
+                <EditText
+                    android:id="@+id/txt_uf"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="40dp"
+                    app:layout_constraintStart_toEndOf="@+id/txt_city"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_cep"
+                    android:hint="@string/txt_uf"
+                    android:textSize="20sp"
+                    android:inputType="textCapWords"
+                    android:autofillHints="true"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/btn_save"
+                android:background="@drawable/btn_round_corner"
+                android:onClick="doRegister"
+                />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                />
+
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
