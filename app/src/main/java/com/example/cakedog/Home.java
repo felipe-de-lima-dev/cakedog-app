@@ -4,12 +4,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 
 public class Home extends AppCompatActivity {
     ImageView img1, img2, img3, img4;
+    Button btnImgSimp, btnImgPers, btnImgTisko, btnImgEspec;
     private ScrollView scrSimples, scrPers, scrTiskos, scrEspec;
+    private HorizontalScrollView srcHorizontal;
     private Button btnSmp, btnPers, btnTiskos, btnEspec;
 
     @Override
@@ -25,6 +29,15 @@ public class Home extends AppCompatActivity {
         scrPers = findViewById(R.id.scrViewPers);
         scrTiskos = findViewById(R.id.scrViewTiskos);
         scrEspec = findViewById(R.id.scrViewEspecial);
+        srcHorizontal = findViewById(R.id.lnLayoutHorBar);
+        btnImgSimp = findViewById(R.id.btnToSimples);
+        btnImgPers = findViewById(R.id.btnToPers);
+        btnImgTisko = findViewById(R.id.btnToTiskos);
+        btnImgEspec = findViewById(R.id.btnToEspecial);
+        btnImgSimp.setBackgroundResource(R.drawable.bolo_simples);
+        btnImgPers.setBackgroundResource(R.drawable.bolo_pers);
+        btnImgTisko.setBackgroundResource(R.drawable.caketisko);
+        btnImgEspec.setBackgroundResource(R.drawable.bolo_espec);
         btnSelectorChanger();
     }
 

@@ -31,11 +31,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
+        android:id="@+id/lnLayoutHorBar"
         android:layout_width="match_parent"
         android:layout_height="110dp"
         android:layout_marginTop="8dp"
-
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar1">
@@ -123,9 +123,64 @@
         android:padding="10dp"
         android:text="@string/home_ttl"
         android:textSize="30sp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
+        app:layout_constraintTop_toBottomOf="@id/lnLayoutHorBar" />
+
+    <ScrollView
+        android:id="@+id/scrViewFirst"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar1"
+        app:layout_constraintBottom_toTopOf="@id/toolbar2"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnToSimples"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/btn_simples"
+                android:contentDescription="@string/btn_simples"/>
+
+            <Button
+                android:id="@+id/btnToPers"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp" />
+
+            <Button
+                android:id="@+id/btnToTiskos"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp" />
+
+            <Button
+                android:id="@+id/btnToEspecial"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <ScrollView
         android:id="@+id/scrViewSimples"
@@ -136,7 +191,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtTitle"
-        android:visibility="visible"
+        android:visibility="gone"
         android:contentDescription="@string/app_name">
 
         <RelativeLayout
