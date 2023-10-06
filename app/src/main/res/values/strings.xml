@@ -22,5 +22,5 @@
     <string name="btn_pers">Personalizados</string>
     <string name="btn_tisco">CakeTiscos</string>
     <string name="btn_espec">Especiais</string>
-    <string name="home_ttl">Escolha o sabor</string>
+    <string name="home_ttl">Escolha o sabor de bolo</string>
 </resources>

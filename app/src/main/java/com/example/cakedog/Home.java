@@ -1,5 +1,6 @@
 package com.example.cakedog;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +13,7 @@ import android.widget.ScrollView;
 public class Home extends AppCompatActivity {
     ImageView img1, img2, img3, img4;
     Button btnImgSimp, btnImgPers, btnImgTisko, btnImgEspec;
-    private ScrollView scrSimples, scrPers, scrTiskos, scrEspec;
+    private ScrollView scrSimples, scrPers, scrTiskos, scrEspec, scrFirst;
     private HorizontalScrollView srcHorizontal;
     private Button btnSmp, btnPers, btnTiskos, btnEspec;
 
@@ -30,15 +31,15 @@ public class Home extends AppCompatActivity {
         scrTiskos = findViewById(R.id.scrViewTiskos);
         scrEspec = findViewById(R.id.scrViewEspecial);
         srcHorizontal = findViewById(R.id.lnLayoutHorBar);
+        scrFirst = findViewById(R.id.scrViewFirst);
         btnImgSimp = findViewById(R.id.btnToSimples);
         btnImgPers = findViewById(R.id.btnToPers);
         btnImgTisko = findViewById(R.id.btnToTiskos);
         btnImgEspec = findViewById(R.id.btnToEspecial);
         btnImgSimp.setBackgroundResource(R.drawable.bolo_simples);
-        btnImgPers.setBackgroundResource(R.drawable.bolo_pers);
+        btnImgPers.setBackgroundResource(R.drawable.bolo_pers2);
         btnImgTisko.setBackgroundResource(R.drawable.caketisko);
         btnImgEspec.setBackgroundResource(R.drawable.bolo_espec);
-        btnSelectorChanger();
     }
 
     public void showSimples(View v) {
@@ -132,5 +133,12 @@ public class Home extends AppCompatActivity {
             img2.setImageResource(R.drawable.festa_doggo);
             img3.setImageResource(R.drawable.festa_doggo);
         }
+    }
+
+    public void toSimples(View v) {
+        scrSimples.setVisibility(View.VISIBLE);
+        scrFirst.setVisibility(View.GONE);
+        srcHorizontal.setVisibility(View.VISIBLE);
+        btnSelectorChanger();
     }
 }
