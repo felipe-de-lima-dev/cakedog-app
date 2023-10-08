@@ -17,6 +17,9 @@
             android:name=".RegisterUser"
             android:exported="false" />
         <activity
+            android:name=".ShoppingCart"
+            android:exported="false" />
+        <activity
             android:name=".Home"
             android:exported="false" />
         <activity

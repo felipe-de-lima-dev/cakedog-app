@@ -12,7 +12,7 @@
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/padrao"
+        android:background="@color/bege"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +92,7 @@
                     android:id="@+id/imgProdView"
                     android:layout_width="200dp"
                     android:layout_height="match_parent"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/bolo_espec" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

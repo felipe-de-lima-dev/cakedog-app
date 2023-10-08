@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="OnClickInXml"
-    android:background="@color/brown_opaque"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home">
@@ -32,11 +32,10 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <HorizontalScrollView
-        android:id="@+id/lnLayoutHorBar"
+        android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="110dp"
         android:layout_marginTop="8dp"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar1">
@@ -81,11 +80,26 @@
                 />
 
             <Button
-                android:id="@+id/btnCaketisco"
+                android:id="@+id/btnEspecial"
                 android:layout_width="140dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="6dp"
                 android:layout_marginEnd="20dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_home_cake_selector"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/btn_espec"
+                android:textAllCaps="false"
+                android:textSize="22sp"
+                android:onClick="showEspecial"
+                />
+
+            <Button
+                android:id="@+id/btnCaketisco"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="6dp"
                 android:layout_marginBottom="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_home_cake_selector"
@@ -96,20 +110,6 @@
                 android:onClick="showTiskos"
                 />
 
-            <Button
-                android:id="@+id/btnEspecial"
-                android:layout_width="140dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="6dp"
-                android:layout_weight="1"
-                android:background="@drawable/btn_home_cake_selector"
-                android:fontFamily="@font/raleway_regular"
-                android:text="@string/btn_espec"
-                android:textAllCaps="false"
-                android:textSize="22sp"
-                android:onClick="showEspecial"
-                />
         </LinearLayout>
 
     </HorizontalScrollView>
@@ -119,104 +119,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:fontFamily="@font/raleway_regular"
-        android:textStyle="bold"
-        android:textAlignment="textStart"
+        android:fontFamily="@font/raleway_bold"
+        android:gravity="center_horizontal"
         android:padding="10dp"
         android:text="@string/home_ttl"
-        android:textSize="32sp"
-        android:visibility="visible"
+        android:textSize="30sp"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lnLayoutHorBar" />
+        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
 
-    <ScrollView
-        android:id="@+id/scrViewFirst"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="1dp"
+        android:background="@drawable/prod_separator"
         app:layout_constraintTop_toBottomOf="@id/txtTitle"
-        app:layout_constraintBottom_toTopOf="@id/toolbar2"
-        android:layout_marginTop="20dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/btnToSimples"
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="@font/raleway_regular"
-                android:textStyle="bold"
-                android:gravity="top|center"
-                android:text="@string/btn_simples"
-                android:textSize="38sp"
-                android:contentDescription="@string/btn_simples"
-                android:textColor="@color/black"
-                android:background="@drawable/bolo_simples"
-                android:onClick="toSimples"
-                />
-
-            <Button
-                android:id="@+id/btnToPers"
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="@font/raleway_regular"
-                android:textStyle="bold"
-                android:gravity="top|center"
-                android:text="@string/btn_pers"
-                android:textSize="28sp"
-                android:contentDescription="@string/btn_pers"
-                android:background="@drawable/bolo_pers2"
-                android:textColor="@color/black"
-                />
-
-            <Button
-                android:id="@+id/btnToTiskos"
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="@font/raleway_regular"
-                android:gravity="top|center"
-                android:textStyle="bold"
-                android:text="@string/btn_tisco"
-                android:textSize="35sp"
-                android:contentDescription="@string/btn_tisco"
-                android:background="@drawable/caketisko"
-                />
-
-            <Button
-                android:id="@+id/btnToEspecial"
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="@font/raleway_regular"
-                android:gravity="top|center"
-                android:textStyle="bold"
-                android:text="@string/btn_espec"
-                android:textSize="35sp"
-                android:contentDescription="@string/btn_espec"
-                android:background="@drawable/bolo_espec"
-                />
-
-        </LinearLayout>
-
-    </ScrollView>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <ScrollView
         android:id="@+id/scrViewSimples"
@@ -227,12 +146,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtTitle"
-        android:visibility="gone"
+        android:visibility="visible"
         android:contentDescription="@string/app_name">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/lnSimples"
@@ -244,60 +159,240 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
 
                 <ImageView
                     android:id="@+id/imgSimples1"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/bolo_simples" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtSm1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtSm2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtSm3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartSm1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
 
                 <ImageView
                     android:id="@+id/imgSimples2"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/bolo_simples" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtSm4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtSm5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtSm6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartSm2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                tools:layout_editor_absoluteY="178dp">
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
 
                 <ImageView
                     android:id="@+id/imgSimples3"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/bolo_simples" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtSm7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtSm8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtSm9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartSm3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
 
                 <ImageView
                     android:id="@+id/imgSimples4"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/bolo_simples" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtSm10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtSm11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtSm12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartSm4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
-
-        </RelativeLayout>
 
     </ScrollView>
 
@@ -323,7 +418,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
 
                 <ImageView
                     android:id="@+id/imgPers1"
@@ -332,12 +431,57 @@
                     android:contentDescription="@string/app_name"
                     tools:src="@drawable/festa_doggo" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtPs1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtPs2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtPs3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartPs1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
 
                 <ImageView
                     android:id="@+id/imgPers2"
@@ -346,12 +490,57 @@
                     android:contentDescription="@string/app_name"
                     tools:src="@drawable/festa_doggo" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtPs4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtPs5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtPs6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartPs2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
 
                 <ImageView
                     android:id="@+id/imgPers3"
@@ -359,6 +548,106 @@
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
                     tools:src="@drawable/festa_doggo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtPs7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtPs8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtPs9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartPs3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
+
+                <ImageView
+                    android:id="@+id/imgPers4"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtPs10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtPs11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtPs12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartPs4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -383,13 +672,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal|center_vertical"
-            android:visibility="gone"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
 
                 <ImageView
                     android:id="@+id/imgTiskos1"
@@ -397,12 +689,58 @@
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
                     tools:src="@drawable/festa_doggo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtTisko1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtTisko2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtTisko3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartTk1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
 
                 <ImageView
                     android:id="@+id/imgTiskos2"
@@ -410,12 +748,58 @@
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
                     tools:src="@drawable/festa_doggo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtTisko4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtTisko5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtTisko6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartTk2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
 
                 <ImageView
                     android:id="@+id/imgTiskos3"
@@ -423,6 +807,107 @@
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
                     tools:src="@drawable/festa_doggo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtTisko7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtTisko8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtTisko9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartTk3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
+
+                <ImageView
+                    android:id="@+id/imgTiskos4"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtTisko10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtTisko11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtTisko12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartTk4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
@@ -446,13 +931,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal|center_vertical"
-            android:visibility="gone"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
 
                 <ImageView
                     android:id="@+id/imgEspec1"
@@ -460,12 +948,58 @@
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
                     tools:src="@drawable/festa_doggo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtEspec1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtEspec2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtEspec3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartEs1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
 
                 <ImageView
                     android:id="@+id/imgEspec2"
@@ -473,12 +1007,58 @@
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
                     tools:src="@drawable/festa_doggo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtEspec4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtEspec5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtEspec6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartEs2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
 
                 <ImageView
                     android:id="@+id/imgEspec3"
@@ -486,6 +1066,107 @@
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
                     tools:src="@drawable/festa_doggo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtEspec7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtEspec8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtEspec9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartEs3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="40dp"
+                android:orientation="horizontal"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:gravity="end|bottom">
+
+                <ImageView
+                    android:id="@+id/imgEspec4"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="end|bottom">
+
+                    <TextView
+                        android:id="@+id/txtEspec10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtEspec11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/txtEspec12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="TextView" />
+
+                    <Button
+                        android:id="@+id/btnCartEs4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_round_corner"
+                        android:onClick="toCart"/>
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
