@@ -18,4 +18,9 @@
     <string name="txt_city">Cidade</string>
     <string name="txt_uf">UF</string>
     <string name="btn_save">Criar conta</string>
+    <string name="btn_simples">Simples</string>
+    <string name="btn_pers">Personalizados</string>
+    <string name="btn_tisco">CakeTiscos</string>
+    <string name="btn_espec">Especiais</string>
+    <string name="home_ttl">Escolha o sabor de bolo</string>
 </resources>

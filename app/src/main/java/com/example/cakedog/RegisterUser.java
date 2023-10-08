@@ -14,7 +14,7 @@ public class RegisterUser extends AppCompatActivity {
     }
 
     public void doRegister(View v) {
-        Intent change = new Intent(RegisterUser.this, MainActivity.class);
+        Intent change = new Intent(RegisterUser.this, LoginUser.class);
         startActivity(change);
         finish();
     }

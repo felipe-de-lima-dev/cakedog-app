@@ -1,9 +1,495 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="OnClickInXml"
+    android:background="@color/brown_opaque"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_brown_opaque"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_brown_opaque"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/lnLayoutHorBar"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:gravity="center_horizontal|center_vertical">
+
+            <Button
+                android:id="@+id/btnSimples"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_home_cake_selector"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/btn_simples"
+                android:textAllCaps="false"
+                android:textSize="22sp"
+                android:onClick="showSimples"
+                />
+
+            <Button
+                android:id="@+id/btnPers"
+                android:layout_width="190dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_home_cake_selector"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/btn_pers"
+                android:textAllCaps="false"
+                android:textSize="22sp"
+                android:onClick="showPers"
+                />
+
+            <Button
+                android:id="@+id/btnCaketisco"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_home_cake_selector"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/btn_tisco"
+                android:textAllCaps="false"
+                android:textSize="22sp"
+                android:onClick="showTiskos"
+                />
+
+            <Button
+                android:id="@+id/btnEspecial"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_home_cake_selector"
+                android:fontFamily="@font/raleway_regular"
+                android:text="@string/btn_espec"
+                android:textAllCaps="false"
+                android:textSize="22sp"
+                android:onClick="showEspecial"
+                />
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/raleway_regular"
+        android:textStyle="bold"
+        android:textAlignment="textStart"
+        android:padding="10dp"
+        android:text="@string/home_ttl"
+        android:textSize="32sp"
+        android:visibility="visible"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lnLayoutHorBar" />
+
+    <ScrollView
+        android:id="@+id/scrViewFirst"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        app:layout_constraintBottom_toTopOf="@id/toolbar2"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnToSimples"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/raleway_regular"
+                android:textStyle="bold"
+                android:gravity="top|center"
+                android:text="@string/btn_simples"
+                android:textSize="38sp"
+                android:contentDescription="@string/btn_simples"
+                android:textColor="@color/black"
+                android:background="@drawable/bolo_simples"
+                android:onClick="toSimples"
+                />
+
+            <Button
+                android:id="@+id/btnToPers"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/raleway_regular"
+                android:textStyle="bold"
+                android:gravity="top|center"
+                android:text="@string/btn_pers"
+                android:textSize="28sp"
+                android:contentDescription="@string/btn_pers"
+                android:background="@drawable/bolo_pers2"
+                android:textColor="@color/black"
+                />
+
+            <Button
+                android:id="@+id/btnToTiskos"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/raleway_regular"
+                android:gravity="top|center"
+                android:textStyle="bold"
+                android:text="@string/btn_tisco"
+                android:textSize="35sp"
+                android:contentDescription="@string/btn_tisco"
+                android:background="@drawable/caketisko"
+                />
+
+            <Button
+                android:id="@+id/btnToEspecial"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/raleway_regular"
+                android:gravity="top|center"
+                android:textStyle="bold"
+                android:text="@string/btn_espec"
+                android:textSize="35sp"
+                android:contentDescription="@string/btn_espec"
+                android:background="@drawable/bolo_espec"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scrViewSimples"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@id/toolbar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        android:visibility="gone"
+        android:contentDescription="@string/app_name">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/lnSimples"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgSimples1"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgSimples2"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteY="178dp">
+
+                <ImageView
+                    android:id="@+id/imgSimples3"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgSimples4"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scrViewPers"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@id/toolbar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        android:visibility="gone"
+        android:contentDescription="@string/app_name">
+
+        <LinearLayout
+            android:id="@+id/lnPers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgPers1"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgPers2"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgPers3"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scrViewTiskos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@id/toolbar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        android:visibility="gone"
+        android:contentDescription="@string/app_name">
+
+        <LinearLayout
+            android:id="@+id/lnTiskos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgTiskos1"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgTiskos2"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgTiskos3"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scrViewEspecial"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@id/toolbar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        android:visibility="gone"
+        android:contentDescription="@string/app_name">
+
+        <LinearLayout
+            android:id="@+id/lnEspecial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgEspec1"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgEspec2"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgEspec3"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/app_name"
+                    tools:src="@drawable/festa_doggo" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
