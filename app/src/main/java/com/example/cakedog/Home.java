@@ -10,8 +10,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Toolbar;
 
 public class Home extends AppCompatActivity {
+    android.support.v7.widget.Toolbar bottomBar;
     ImageView img1, img2, img3, img4;
     private ScrollView scrSimples, scrPers, scrTiskos, scrEspec;
     private Button btnSmp, btnPers, btnTiskos, btnEspec;
@@ -29,6 +31,12 @@ public class Home extends AppCompatActivity {
         scrPers = findViewById(R.id.scrViewPers);
         scrTiskos = findViewById(R.id.scrViewTiskos);
         scrEspec = findViewById(R.id.scrViewEspecial);
+        bottomBar = findViewById(R.id.toolbar2);
+        setSupportActionBar(bottomBar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.ic_cart);
+        //getSupportActionBar().setTitle(R.string.app_name);
         btnSelectorChanger();
     }
 
