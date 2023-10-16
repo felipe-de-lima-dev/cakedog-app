@@ -35,7 +35,7 @@ public class LoginUser extends AppCompatActivity {
         try {
             user = txtUser.getText().toString();
             pw = txtPw.getText().toString();
-            if(user.equals("user") && pw.equals("123")) {
+            if(user.equals("") && pw.equals("")) {
                 Intent change = new Intent(LoginUser.this, Home.class);
                 startActivity(change);
                 finish();

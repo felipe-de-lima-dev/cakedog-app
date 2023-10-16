@@ -10,13 +10,17 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toolbar;
+import com.example.cakedog.ShoppingCart;
 
 public class Home extends AppCompatActivity {
-    android.support.v7.widget.Toolbar bottomBar;
+    private LinearLayout lnAlterQuantity;
     ImageView img1, img2, img3, img4;
     private ScrollView scrSimples, scrPers, scrTiskos, scrEspec;
     private Button btnSmp, btnPers, btnTiskos, btnEspec;
+    private TextView txtQuantityItem;
+    private int qtdeProd = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +35,8 @@ public class Home extends AppCompatActivity {
         scrPers = findViewById(R.id.scrViewPers);
         scrTiskos = findViewById(R.id.scrViewTiskos);
         scrEspec = findViewById(R.id.scrViewEspecial);
-        bottomBar = findViewById(R.id.toolbar2);
-        setSupportActionBar(bottomBar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.ic_cart);
-        //getSupportActionBar().setTitle(R.string.app_name);
+        lnAlterQuantity = findViewById(R.id.alterQuantityItem);
+        txtQuantityItem = findViewById(R.id.txtQuantityItem);
         btnSelectorChanger();
     }
 
@@ -142,5 +142,43 @@ public class Home extends AppCompatActivity {
     public void toCart(View v) {
         Intent change = new Intent(Home.this, ShoppingCart.class);
         startActivity(change);
+        lnAlterQuantity.setVisibility(View.GONE);
+    }
+
+    public void showQuantityItem(View v) {
+        if(lnAlterQuantity.getVisibility() == View.VISIBLE) {
+            lnAlterQuantity.setVisibility(View.GONE);
+        } else {
+            lnAlterQuantity.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void plusOne(View v) {
+        try {
+            qtdeProd = Integer.parseInt(txtQuantityItem.getText().toString());
+            qtdeProd++;
+            txtQuantityItem.setText(Integer.toString(qtdeProd));
+        } catch(Exception ex) {
+
+        }
+    }
+
+    public void minusOne(View v) {
+        try {
+            qtdeProd = Integer.parseInt(txtQuantityItem.getText().toString());
+            if(qtdeProd < 2) {
+                qtdeProd = 1;
+            } else {
+                qtdeProd--;
+            }
+            txtQuantityItem.setText(Integer.toString(qtdeProd));
+        } catch(Exception ex) {
+
+        }
+    }
+
+    public void addQtdeToCart(View v) {
+        ShoppingCart.qtdeItem = qtdeProd;
+        lnAlterQuantity.setVisibility(View.GONE);
     }
 }

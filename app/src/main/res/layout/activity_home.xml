@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="OnClickInXml"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
+    android:orientation="vertical"
+    tools:context=".Home"
+    tools:ignore="OnClickInXml|NoSpeakeableTextPresent">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar1"
@@ -15,9 +15,9 @@
         android:layout_height="wrap_content"
         android:background="@color/light_brown_opaque"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,8 +26,8 @@
             android:id="@+id/imgIconDog"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/logo_oficial"
-            android:contentDescription="@string/app_name"/>
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/logo_oficial" />
 
     </android.support.v7.widget.Toolbar>
 
@@ -45,25 +45,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:gravity="end"
+            android:paddingEnd="30dp"
+            android:paddingStart="30dp">
 
             <Button
                 android:layout_width="72dp"
                 android:layout_height="72dp"
+                android:layout_gravity="end"
                 android:background="@drawable/ic_cart"
-                android:layout_gravity="start"/>
-
-            <Button
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                android:background="@drawable/ic_cart"
-                android:layout_gravity="center"/>
-
-            <Button
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                android:background="@drawable/ic_cart"
-                android:layout_gravity="end"/>
+                android:contentDescription="@string/btn_cart"
+                android:onClick="toCart" />
 
         </LinearLayout>
 
@@ -81,9 +73,9 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
             android:paddingStart="6dp"
-            android:paddingEnd="6dp"
-            android:gravity="center_horizontal|center_vertical">
+            android:paddingEnd="6dp">
 
             <Button
                 android:id="@+id/btnSimples"
@@ -95,11 +87,10 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_home_cake_selector"
                 android:fontFamily="@font/raleway_regular"
+                android:onClick="showSimples"
                 android:text="@string/btn_simples"
                 android:textAllCaps="false"
-                android:textSize="22sp"
-                android:onClick="showSimples"
-                />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/btnPers"
@@ -111,11 +102,10 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_home_cake_selector"
                 android:fontFamily="@font/raleway_regular"
+                android:onClick="showPers"
                 android:text="@string/btn_pers"
                 android:textAllCaps="false"
-                android:textSize="22sp"
-                android:onClick="showPers"
-                />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/btnEspecial"
@@ -127,11 +117,10 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_home_cake_selector"
                 android:fontFamily="@font/raleway_regular"
+                android:onClick="showEspecial"
                 android:text="@string/btn_espec"
                 android:textAllCaps="false"
-                android:textSize="22sp"
-                android:onClick="showEspecial"
-                />
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/btnCaketisco"
@@ -142,11 +131,10 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_home_cake_selector"
                 android:fontFamily="@font/raleway_regular"
+                android:onClick="showTiskos"
                 android:text="@string/btn_tisco"
                 android:textAllCaps="false"
-                android:textSize="22sp"
-                android:onClick="showTiskos"
-                />
+                android:textSize="22sp" />
 
         </LinearLayout>
 
@@ -161,8 +149,8 @@
         android:gravity="center_horizontal"
         android:padding="10dp"
         android:text="@string/home_ttl"
-        android:textSize="30sp"
         android:textColor="@color/black"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
@@ -171,53 +159,53 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@drawable/prod_separator"
-        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
 
     <ScrollView
         android:id="@+id/scrViewSimples"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
+        android:contentDescription="@string/app_name"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@id/toolbar2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtTitle"
-        android:visibility="visible"
-        android:contentDescription="@string/app_name">
+        app:layout_constraintTop_toBottomOf="@id/txtTitle">
 
         <LinearLayout
             android:id="@+id/lnSimples"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="visible"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="visible">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgSimples1"
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/bolo_simples"
-                    android:onClick="toCart"/>
+                    android:onClick="showQuantityItem"
+                    tools:src="@drawable/bolo_simples" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtSm1"
@@ -245,10 +233,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -258,10 +246,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgSimples2"
@@ -273,10 +261,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtSm4"
@@ -304,10 +292,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -317,10 +305,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgSimples3"
@@ -332,10 +320,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtSm7"
@@ -363,10 +351,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -375,11 +363,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
                 android:layout_marginBottom="20dp"
-                android:paddingEnd="10dp"
+                android:gravity="end|bottom"
+                android:orientation="horizontal"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgSimples4"
@@ -391,10 +379,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtSm10"
@@ -422,10 +410,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -440,12 +428,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
+        android:contentDescription="@string/app_name"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/toolbar2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtTitle"
-        android:visibility="gone"
-        android:contentDescription="@string/app_name">
+        app:layout_constraintTop_toBottomOf="@id/txtTitle">
 
         <LinearLayout
             android:id="@+id/lnPers"
@@ -458,10 +446,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgPers1"
@@ -473,10 +461,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtPs1"
@@ -504,10 +492,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -517,10 +505,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgPers2"
@@ -532,10 +520,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtPs4"
@@ -563,10 +551,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -576,10 +564,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgPers3"
@@ -591,10 +579,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtPs7"
@@ -622,10 +610,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -635,10 +623,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgPers4"
@@ -650,10 +638,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtPs10"
@@ -681,10 +669,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -699,12 +687,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
+        android:contentDescription="@string/app_name"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/toolbar2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtTitle"
-        android:visibility="gone"
-        android:contentDescription="@string/app_name">
+        app:layout_constraintTop_toBottomOf="@id/txtTitle">
 
         <LinearLayout
             android:id="@+id/lnTiskos"
@@ -717,10 +705,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgTiskos1"
@@ -732,10 +720,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtTisko1"
@@ -763,10 +751,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -776,10 +764,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgTiskos2"
@@ -791,10 +779,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtTisko4"
@@ -822,10 +810,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -835,10 +823,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgTiskos3"
@@ -850,10 +838,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtTisko7"
@@ -881,10 +869,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -894,10 +882,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgTiskos4"
@@ -909,10 +897,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtTisko10"
@@ -940,10 +928,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -958,12 +946,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
+        android:contentDescription="@string/app_name"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/toolbar2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtTitle"
-        android:visibility="gone"
-        android:contentDescription="@string/app_name">
+        app:layout_constraintTop_toBottomOf="@id/txtTitle">
 
         <LinearLayout
             android:id="@+id/lnEspecial"
@@ -976,10 +964,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgEspec1"
@@ -991,10 +979,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtEspec1"
@@ -1022,10 +1010,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -1035,10 +1023,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgEspec2"
@@ -1050,10 +1038,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtEspec4"
@@ -1081,10 +1069,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -1094,10 +1082,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgEspec3"
@@ -1109,10 +1097,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtEspec7"
@@ -1140,10 +1128,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -1153,10 +1141,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="40dp"
+                android:gravity="end|bottom"
                 android:orientation="horizontal"
-                android:paddingEnd="10dp"
                 android:paddingStart="10dp"
-                android:gravity="end|bottom">
+                android:paddingEnd="10dp">
 
                 <ImageView
                     android:id="@+id/imgEspec4"
@@ -1168,10 +1156,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="end|bottom"
                     android:orientation="vertical"
-                    android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:gravity="end|bottom">
+                    android:paddingEnd="10dp">
 
                     <TextView
                         android:id="@+id/txtEspec10"
@@ -1199,10 +1187,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="toCart"/>
+                        android:onClick="showQuantityItem"
+                        android:text="@string/btn_show_prod"
+                        android:textAllCaps="false" />
 
                 </LinearLayout>
 
@@ -1211,5 +1199,76 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/alterQuantityItem"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/toolbar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnMinus"
+                android:layout_width="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/grey"
+                android:fontFamily="sans-serif"
+                android:text="@string/btn_minus"
+                android:textSize="30sp"
+                android:onClick="minusOne"/>
+
+            <TextView
+                android:id="@+id/txtQuantityItem"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="serif"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnPlus"
+                android:layout_width="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/grey"
+                android:fontFamily="sans-serif"
+                android:text="@string/btn_plus"
+                android:textSize="30sp"
+                android:onClick="plusOne"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnAddshowQuantityItem"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/btn_show_prod"
+                android:onClick="addQtdeToCart"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
