@@ -12,9 +12,9 @@ import java.sql.Statement;
 
 public class ConnectionToSQL {
 
-    Connection con;
-    Statement stmt;
-    ResultSet reSet;
+    public static Connection con;
+    public static Statement stmt;
+    public static ResultSet reSet;
 
     public Connection enterDataBase(Context ctx) {
         try {

@@ -5,16 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class DeliveryScreen extends AppCompatActivity {
+public class Payment extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delivery_screen);
+        setContentView(R.layout.activity_payment);
     }
 
-    public void toPayment(View v) {
-        Intent change = new Intent(DeliveryScreen.this, Payment.class);
-        startActivity(change);
+    public void conclude(View v) {
+        finish();
     }
 }

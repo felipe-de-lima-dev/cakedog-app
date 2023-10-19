@@ -29,23 +29,12 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/brown_opaque"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/txtTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Escolha o endereço para entrega"
+        android:text="@string/title_deliv"
         android:textSize="28sp"
         android:fontFamily="@font/raleway_bold"
         app:layout_constraintBottom_toTopOf="@id/scrViewLoc"
@@ -87,7 +76,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Entregar no endereço:"
+                    android:text="@string/deliv_instr"
                     android:textSize="20sp" />
 
             </LinearLayout>
@@ -96,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:onClick="test">
+                android:background="@drawable/product_border">
 
                 <ImageView
                     android:id="@+id/imageView"
@@ -111,7 +100,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txtEnder"
+                        android:id="@+id/txtAddres"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
@@ -122,7 +111,7 @@
                         android:text="Rua Blablabla" />
 
                     <TextView
-                        android:id="@+id/txtBairro"
+                        android:id="@+id/txtNbrhood"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -137,5 +126,18 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_weight="1"
+        android:onClick="toPayment"
+        android:textSize="26sp"
+        android:textAllCaps="false"
+        android:text="@string/btn_confirm" />
 
 </android.support.constraint.ConstraintLayout>

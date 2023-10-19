@@ -27,4 +27,9 @@
     <string name="btn_cart">Carrinho</string>
     <string name="btn_plus">+</string>
     <string name="btn_minus">-</string>
+    <string name="txt_pay">Pagamento</string>
+    <string name="title_deliv">Escolha o endereço para entrega</string>
+    <string name="deliv_instr">Entregar no endereço:</string>
+    <string name="btn_confirm">Confirmar</string>
+    <string name="btn_add_card">Adicionar novo cartão</string>
 </resources>
