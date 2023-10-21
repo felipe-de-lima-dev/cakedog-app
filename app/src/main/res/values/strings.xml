@@ -4,14 +4,13 @@
     <string name="pw">Senha</string>
     <string name="btn_enter">Entrar</string>
     <string name="btn_create_account">Criar conta</string>
-    <string name="title_reg">Criar uma conta</string>
+    <string name="title_reg">Crie uma conta</string>
     <string name="txt_name">Nome completo</string>
     <string name="txt_cpf">CPF</string>
     <string name="txt_fone">Telefone</string>
     <string name="txt_email">E-mail</string>
     <string name="txt_pw">Senha</string>
-    <string name="title_end">Endereço</string>
-    <string name="txt_logr">Logradouro</string>
+    <string name="txt_end">Endereço</string>
     <string name="txt_endNum">Nº</string>
     <string name="txt_bairro">Bairro</string>
     <string name="txt_cep">CEP</string>
@@ -32,4 +31,5 @@
     <string name="deliv_instr">Entregar no endereço:</string>
     <string name="btn_confirm">Confirmar</string>
     <string name="btn_add_card">Adicionar novo cartão</string>
+    <string name="spn_uf">Selecione o UF</string>
 </resources>
