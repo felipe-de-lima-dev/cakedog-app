@@ -12,9 +12,9 @@ import java.sql.Statement;
 
 public class ConnectionToSQL {
 
-    public static Connection con;
-    public static Statement stmt;
-    public static ResultSet reSet;
+    public static Connection con = null;
+    public static Statement stmt = null;
+    public static ResultSet reSet = null;
 
     public Connection enterDataBase(Context ctx) {
         try {
@@ -27,8 +27,8 @@ public class ConnectionToSQL {
         }
 
         try {
-            String url = "jdbc:jtds:sqlserver://cakedog-bd.cqf8pey6cmkc.us-east-2.rds.amazonaws.com/cakedog";
-            con = DriverManager.getConnection(url, "Cakedog", "CakeDog2023");
+            String url = "jdbc:jtds:sqlserver://192.168.1.104:1433/Cakedog";
+            con = DriverManager.getConnection(url, "sa", "12345");
             stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         } catch(SQLException ex) {
             Toast.makeText(ctx.getApplicationContext(), "Não conectado" + ex, Toast.LENGTH_LONG).show();

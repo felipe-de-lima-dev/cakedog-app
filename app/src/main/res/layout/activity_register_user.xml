@@ -12,12 +12,13 @@
     <TextView
         android:id="@+id/title_reg"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:text="@string/title_reg"
         android:textSize="40sp"
+        android:textColor="@color/black"
         android:textAlignment="center"
         android:textStyle="bold"
         android:paddingStart="12dp"
@@ -35,7 +36,7 @@
         />
 
     <ScrollView
-        android:id="@+id/scroll_view"
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/separator"
@@ -44,31 +45,51 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
-            android:id="@+id/linear"
-            android:layout_width="match_parent"
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/txt_name"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                />
 
             <EditText
-                android:id="@+id/txt_name"
+                android:id="@+id/txtName"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="50dp"
                 android:autofillHints="true"
                 android:background="@drawable/custom_input"
                 android:hint="@string/txt_name"
                 android:inputType="textPersonName"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/txt_cpf"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                />
 
             <EditText
-                android:id="@+id/txt_cpf"
+                android:id="@+id/txtCPF"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
                 android:autofillHints="true"
                 android:background="@drawable/custom_input"
                 android:hint="@string/txt_cpf"
@@ -77,12 +98,46 @@
                 android:paddingEnd="12dp"
                 android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/txt_fone"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/btn_birth_date"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                />
+
+            <Button
+                android:id="@+id/btnBirthDate"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textSize="28sp"
+                android:textColor="@color/white"
+                style="?android:spinnerStyle"
+                android:onClick="openDatePicker"
+                android:hint="@string/btn_birth_date"
+                android:gravity="center_vertical"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/txt_fone"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                />
+
+            <EditText
+                android:id="@+id/txtPhone"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
                 android:autofillHints="true"
                 android:background="@drawable/custom_input"
                 android:hint="@string/txt_fone"
@@ -91,12 +146,21 @@
                 android:paddingEnd="12dp"
                 android:textSize="20sp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/txt_end"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                />
+
             <EditText
-                android:id="@+id/txt_end"
+                android:id="@+id/txtAddress"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="50dp"
                 android:autofillHints="true"
                 android:background="@drawable/custom_input"
                 android:hint="@string/txt_end"
@@ -105,12 +169,21 @@
                 android:paddingEnd="12dp"
                 android:textSize="20sp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/txt_bairro"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                />
+
             <EditText
-                android:id="@+id/txt_bairro"
+                android:id="@+id/txtNeighborhood"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
                 android:autofillHints="true"
                 android:background="@drawable/custom_input"
                 android:hint="@string/txt_bairro"
@@ -119,25 +192,43 @@
                 android:paddingEnd="12dp"
                 android:textSize="20sp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/txt_cep"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                />
+
             <EditText
-                android:id="@+id/txt_cep"
+                android:id="@+id/txtCEP"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
                 android:autofillHints="true"
                 android:background="@drawable/custom_input"
                 android:hint="@string/txt_cep"
-                android:inputType="textPostalAddress"
+                android:inputType="number"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
                 android:textSize="20sp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/txt_city"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                />
+
             <EditText
-                android:id="@+id/txt_city"
+                android:id="@+id/txtCity"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
                 android:autofillHints="true"
                 android:background="@drawable/custom_input"
@@ -148,25 +239,46 @@
                 android:textSize="20sp"
                 />
 
-            <Spinner
-                android:id="@+id/spnUf"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/btn_uf"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                />
+
+            <Button
+                android:id="@+id/btnUF"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
-                android:contentDescription="@string/spn_uf"
+                android:textSize="28sp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textColor="@color/white"
+                style="?android:spinnerStyle"
+                android:onClick="openDatePicker"
+                android:hint="@string/btn_uf"
+                android:gravity="center_vertical"
                 />
-                    <!--android:background="@drawable/blue_outline"
-                    android:popupBackground="@drawable/blue_outline_white_background"
-                    android:spinnerMode="dropdown"
-                    tools:listitem="@layout/item_country" -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/txt_email"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                />
 
             <EditText
-                android:id="@+id/txt_email"
+                android:id="@+id/txtEmail"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="50dp"
                 android:autofillHints="true"
                 android:background="@drawable/custom_input"
                 android:hint="@string/txt_email"
@@ -175,12 +287,21 @@
                 android:paddingEnd="12dp"
                 android:textSize="20sp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="8dp"
+                android:text="@string/txt_pw"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                />
+
             <EditText
-                android:id="@+id/txt_pw"
+                android:id="@+id/txtPw"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
                 android:autofillHints="true"
                 android:background="@drawable/custom_input"
                 android:hint="@string/txt_pw"
@@ -193,7 +314,7 @@
 
 
             <Button
-                android:id="@+id/btn_save"
+                android:id="@+id/btnSave"
                 android:layout_width="280dp"
                 android:layout_height="60dp"
                 android:layout_marginTop="70dp"

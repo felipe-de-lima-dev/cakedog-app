@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/raleway_bold"
-                    android:text="Carrinho"
+                    android:text="@string/btn_cart"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="36sp"
@@ -82,12 +82,12 @@
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:fontFamily="@font/raleway_regular"
-                android:text="Adicionar mais itens"
+                android:text="@string/txt_add_items"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:layout_marginTop="20dp"/>
 
             <LinearLayout
@@ -103,7 +103,9 @@
                     android:id="@+id/imgProdView"
                     android:layout_width="200dp"
                     android:layout_height="match_parent"
-                    tools:src="@drawable/bolo_espec" />
+                    tools:src="@drawable/bolo_espec"
+                    android:contentDescription="@string/app_name"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -116,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:fontFamily="@font/raleway_regular"
-                        android:text="TextView" />
+                        android:text="@string/txt_description" />
 
                     <TextView
                         android:id="@+id/tv2"
@@ -124,15 +126,15 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:fontFamily="@font/raleway_regular"
-                        android:text="TextView" />
+                        android:text="@string/txt_description" />
 
                     <TextView
                         android:id="@+id/tv3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:fontFamily="@font/raleway_regular"
-                        android:text="TextView" />
+                        android:fontFamily="@font/raleway_bold"
+                        android:text="@string/txt_product_value" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -145,8 +147,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@android:color/transparent"
-                            android:fontFamily="sans-serif"
-                            android:text="-"
+                            android:text="@string/btn_minus"
                             android:textSize="30sp" />
 
                         <TextView
@@ -154,8 +155,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:fontFamily="serif"
-                            android:text="1"
+                            android:text="@string/txt_quantity"
                             android:gravity="center_vertical|center_horizontal"
                             android:textAlignment="center"
                             android:textColor="@color/black"
@@ -168,8 +168,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@android:color/transparent"
-                            android:fontFamily="sans-serif"
-                            android:text="+"
+                            android:text="@string/btn_plus"
                             android:textSize="30sp" />
 
                     </LinearLayout>
@@ -200,7 +199,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="Total com entrega"
+                android:text="@string/txt_total"
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:fontFamily="@font/raleway_regular"/>
@@ -218,7 +217,7 @@
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:fontFamily="@font/raleway_bold"
-                android:text="Valor"
+                android:text="@string/txt_total_value"
                 android:textAlignment="viewEnd" />
         </LinearLayout>
 
@@ -234,7 +233,7 @@
             android:fontFamily="@font/raleway_bold"
             android:background="@drawable/btn_round_corner"
             android:textSize="26sp"
-            android:text="Continuar"
+            android:text="@string/btn_continue"
             android:onClick="toDeliver"/>
 
     </LinearLayout>

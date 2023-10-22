@@ -13,7 +13,7 @@ public class ShoppingCart extends AppCompatActivity {
     ImageView img;
     LinearLayout ln;
     public static int qtdeItem = 1;
-    private TextView qtdeProd;
+    TextView qtdeProd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

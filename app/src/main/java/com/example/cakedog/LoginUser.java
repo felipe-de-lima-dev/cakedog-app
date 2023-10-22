@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class LoginUser extends AppCompatActivity {
     private EditText txtUser, txtPw;
+    ConnectionToSQL connect = new ConnectionToSQL();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class LoginUser extends AppCompatActivity {
 
         txtUser = findViewById(R.id.txtUser);
         txtPw = findViewById(R.id.txtPw);
+        connect.enterDataBase(this);
     }
 
     @Override
@@ -31,11 +33,12 @@ public class LoginUser extends AppCompatActivity {
     }
 
     public void toHome(View v) {
-        String user, pw;
+        String user = "", pw = "";
         try {
             user = txtUser.getText().toString();
             pw = txtPw.getText().toString();
-            if(user.equals("") && pw.equals("")) {
+            ConnectionToSQL.reSet = ConnectionToSQL.stmt.executeQuery("SELECT * FROM Cliente WHERE email_cli LIKE '" + user + "' AND senha_cli = '" + pw + "'");
+            if(ConnectionToSQL.reSet.next()) {
                 Intent change = new Intent(LoginUser.this, Home.class);
                 startActivity(change);
                 finish();
@@ -46,13 +49,12 @@ public class LoginUser extends AppCompatActivity {
                 txtUser.requestFocus();
             }
         } catch(Exception ex) {
-
+            Toast.makeText(this, "Digite seu e-mail ou senha", Toast.LENGTH_LONG).show();
         }
     }
 
     public void toRegister(View v) {
         Intent change = new Intent(LoginUser.this, RegisterUser.class);
         startActivity(change);
-        finish();
     }
 }

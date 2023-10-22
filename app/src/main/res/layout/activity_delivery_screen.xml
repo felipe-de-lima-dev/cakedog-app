@@ -92,6 +92,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:contentDescription="@string/txt_end"
                     app:srcCompat="@drawable/maps" />
 
                 <LinearLayout
@@ -108,7 +109,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:gravity="center_vertical"
-                        android:text="Rua Blablabla" />
+                        android:text="@string/txt_street" />
 
                     <TextView
                         android:id="@+id/txtNbrhood"
@@ -117,7 +118,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:text="Bairro" />
+                        android:text="@string/txt_neighborhood" />
 
                 </LinearLayout>
 

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">CakeDog</string>
-    <string name="login">Login</string>
+    <string name="login">E-mail</string>
     <string name="pw">Senha</string>
     <string name="btn_enter">Entrar</string>
     <string name="btn_create_account">Criar conta</string>
@@ -25,11 +25,22 @@
     <string name="btn_show_prod">Adc. ao carrinho</string>
     <string name="btn_cart">Carrinho</string>
     <string name="btn_plus">+</string>
+    <string name="txt_quantity">1</string>
     <string name="btn_minus">-</string>
     <string name="txt_pay">Pagamento</string>
     <string name="title_deliv">Escolha o endereço para entrega</string>
     <string name="deliv_instr">Entregar no endereço:</string>
     <string name="btn_confirm">Confirmar</string>
+    <string name="btn_continue">Continuar</string>
     <string name="btn_add_card">Adicionar novo cartão</string>
     <string name="spn_uf">Selecione o UF</string>
+    <string name="txt_street">Rua Padrão</string>
+    <string name="txt_neighborhood">Bairro Padrão</string>
+    <string name="txt_add_items">Adicionar mais itens</string>
+    <string name="txt_description">Descrição do produto</string>
+    <string name="txt_product_value">R$ Valor do produto</string>
+    <string name="txt_total">Total com entrega</string>
+    <string name="txt_total_value">R$ Total</string>
+    <string name="btn_birth_date">Data de nascimento</string>
+    <string name="btn_uf">Selecione o UF</string>
 </resources>
