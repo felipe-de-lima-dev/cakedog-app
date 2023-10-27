@@ -7,13 +7,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Home"
-    tools:ignore="OnClickInXml|NoSpeakeableTextPresent">
+    tools:ignore="OnClickInXml"
+    android:background="@color/light_bege">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/light_brown_opaque"
+        android:background="@color/bege"
         android:minHeight="?attr/actionBarSize"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
@@ -35,7 +36,7 @@
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/light_brown_opaque"
+        android:background="@color/bege"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,17 +46,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="end"
             android:paddingEnd="30dp"
             android:paddingStart="30dp">
 
             <Button
+                android:id="@+id/btnToUser"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
-                android:layout_gravity="end"
+                android:background="@drawable/ic_user"
+                android:contentDescription="@string/user"
+                />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btnToCart"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
                 android:background="@drawable/ic_cart"
                 android:contentDescription="@string/btn_cart"
-                android:onClick="toCart" />
+                />
 
         </LinearLayout>
 
@@ -86,7 +99,7 @@
                 android:layout_marginBottom="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_home_cake_selector"
-                android:fontFamily="@font/raleway_regular"
+                android:fontFamily="@font/quicksand_semi_bold"
                 android:onClick="showSimples"
                 android:text="@string/btn_simples"
                 android:textAllCaps="false"
@@ -101,7 +114,7 @@
                 android:layout_marginBottom="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_home_cake_selector"
-                android:fontFamily="@font/raleway_regular"
+                android:fontFamily="@font/quicksand_semi_bold"
                 android:onClick="showPers"
                 android:text="@string/btn_pers"
                 android:textAllCaps="false"
@@ -116,7 +129,7 @@
                 android:layout_marginBottom="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_home_cake_selector"
-                android:fontFamily="@font/raleway_regular"
+                android:fontFamily="@font/quicksand_semi_bold"
                 android:onClick="showEspecial"
                 android:text="@string/btn_espec"
                 android:textAllCaps="false"
@@ -130,7 +143,7 @@
                 android:layout_marginBottom="6dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_home_cake_selector"
-                android:fontFamily="@font/raleway_regular"
+                android:fontFamily="@font/quicksand_semi_bold"
                 android:onClick="showTiskos"
                 android:text="@string/btn_tisco"
                 android:textAllCaps="false"
@@ -145,7 +158,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:fontFamily="@font/raleway_bold"
+        android:fontFamily="@font/quicksand_bold"
         android:gravity="center_horizontal"
         android:padding="10dp"
         android:text="@string/home_ttl"
@@ -161,7 +174,10 @@
         android:background="@drawable/prod_separator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
 
     <ScrollView
         android:id="@+id/scrViewSimples"
@@ -1210,52 +1226,58 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/toolbar2"
         app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:background="@drawable/product_border">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/btn_quantity_style">
 
             <Button
                 android:id="@+id/btnMinus"
                 android:layout_width="5dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/grey"
-                android:fontFamily="sans-serif"
+                android:background="@drawable/btn_quantity_style"
+                android:fontFamily="@font/quicksand_bold"
                 android:text="@string/btn_minus"
+                android:textAlignment="center"
                 android:textSize="30sp"
-                android:onClick="minusOne"/>
+                android:onClick="minusOne"
+                />
 
             <TextView
                 android:id="@+id/txtQuantityItem"
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:fontFamily="serif"
+                android:fontFamily="@font/quicksand_bold"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="1"
+                android:text="@string/txt_quantity"
                 android:textColor="@color/black"
                 android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
 
             <Button
                 android:id="@+id/btnPlus"
                 android:layout_width="5dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/grey"
-                android:fontFamily="sans-serif"
+                android:background="@drawable/btn_quantity_style"
+                android:fontFamily="@font/quicksand_bold"
                 android:text="@string/btn_plus"
                 android:textSize="30sp"
-                android:onClick="plusOne"/>
+                android:onClick="plusOne"
+                />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -1265,7 +1287,10 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="@string/btn_show_prod"
-                android:onClick="addQtdeToCart"/>
+                android:onClick="addQtdeToCart"
+                android:fontFamily="@font/quicksand_bold"
+                android:background="@drawable/btn_quantity_style"
+                />
 
         </LinearLayout>
 

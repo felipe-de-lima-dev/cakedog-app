@@ -5,13 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeliveryScreen">
+    tools:context=".DeliveryScreen"
+    android:background="@color/light_bege">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/brown_opaque"
+        android:background="@color/bege"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         android:paddingTop="10dp"
@@ -36,7 +37,7 @@
         android:gravity="center"
         android:text="@string/title_deliv"
         android:textSize="28sp"
-        android:fontFamily="@font/raleway_bold"
+        android:fontFamily="@font/quicksand_bold"
         app:layout_constraintBottom_toTopOf="@id/scrViewLoc"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar1" />
@@ -47,7 +48,10 @@
         android:background="@drawable/prod_separator"
         app:layout_constraintTop_toBottomOf="@id/txtTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
 
     <ScrollView
         android:id="@+id/scrViewLoc"
@@ -61,7 +65,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -76,6 +82,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/quicksand_semi_bold"
                     android:text="@string/deliv_instr"
                     android:textSize="20sp" />
 
@@ -109,6 +116,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:gravity="center_vertical"
+                        android:fontFamily="@font/quicksand_regular"
                         android:text="@string/txt_street" />
 
                     <TextView
@@ -118,6 +126,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/quicksand_regular"
                         android:text="@string/txt_neighborhood" />
 
                 </LinearLayout>
@@ -130,8 +139,8 @@
 
     <Button
         android:id="@+id/btnConfirm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -139,6 +148,11 @@
         android:onClick="toPayment"
         android:textSize="26sp"
         android:textAllCaps="false"
-        android:text="@string/btn_confirm" />
+        android:text="@string/btn_continue"
+        android:layout_margin="50dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/quicksand_bold"
+        android:background="@drawable/btn_round_corner"
+        />
 
 </android.support.constraint.ConstraintLayout>

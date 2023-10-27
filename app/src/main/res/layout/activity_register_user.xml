@@ -6,7 +6,7 @@
     tools:ignore="UsingOnClickInXml"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/brown_opaque"
+    android:background="@color/light_bege"
     tools:context=".RegisterUser">
 
     <TextView
@@ -20,9 +20,11 @@
         android:textSize="40sp"
         android:textColor="@color/black"
         android:textAlignment="center"
+        android:fontFamily="@font/quicksand_regular"
         android:textStyle="bold"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:background="@color/bege"
         />
 
     <View
@@ -56,9 +58,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:layout_marginStart="8dp"
-                android:text="@string/txt_name"
+                android:text="@string/txt_name_"
                 android:textSize="22sp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/quicksand_medium"
                 />
 
             <EditText
@@ -73,6 +76,7 @@
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
                 android:textSize="20sp"
+                android:fontFamily="@font/quicksand_regular"
                 />
 
             <TextView
@@ -80,9 +84,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="8dp"
-                android:text="@string/txt_cpf"
+                android:text="@string/txt_cpf_"
                 android:textSize="22sp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/quicksand_medium"
                 />
 
             <EditText
@@ -96,16 +101,19 @@
                 android:inputType="number"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:fontFamily="@font/quicksand_regular"
+                />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="8dp"
-                android:text="@string/btn_birth_date"
+                android:text="@string/btn_birth_date_"
                 android:textSize="22sp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/quicksand_medium"
                 />
 
             <Button
@@ -113,14 +121,15 @@
                 android:layout_width="350dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
                 android:textSize="28sp"
-                android:textColor="@color/white"
                 style="?android:spinnerStyle"
                 android:onClick="openDatePicker"
                 android:hint="@string/btn_birth_date"
+                android:textColor="@color/black"
                 android:gravity="center_vertical"
+                android:fontFamily="@font/quicksand_regular"
                 />
 
             <TextView
@@ -128,9 +137,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="8dp"
-                android:text="@string/txt_fone"
+                android:text="@string/txt_fone_"
                 android:textSize="22sp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/quicksand_medium"
                 />
 
             <EditText
@@ -144,16 +154,19 @@
                 android:inputType="phone"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:fontFamily="@font/quicksand_regular"
+                />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:layout_marginStart="8dp"
-                android:text="@string/txt_end"
+                android:text="@string/txt_end_"
                 android:textSize="22sp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/quicksand_medium"
                 />
 
             <EditText
@@ -167,16 +180,19 @@
                 android:inputType="text"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:fontFamily="@font/quicksand_regular"
+                />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="8dp"
-                android:text="@string/txt_bairro"
+                android:text="@string/txt_bairro_"
                 android:textSize="22sp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/quicksand_medium"
                 />
 
             <EditText
@@ -190,16 +206,19 @@
                 android:inputType="text"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:fontFamily="@font/quicksand_regular"
+                />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="8dp"
-                android:text="@string/txt_cep"
+                android:text="@string/txt_cep_"
                 android:textSize="22sp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/quicksand_medium"
                 />
 
             <EditText
@@ -213,16 +232,19 @@
                 android:inputType="number"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:fontFamily="@font/quicksand_regular"
+                />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="8dp"
-                android:text="@string/txt_city"
+                android:text="@string/txt_city_"
                 android:textSize="22sp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/quicksand_medium"
                 />
 
             <EditText
@@ -237,6 +259,7 @@
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
                 android:textSize="20sp"
+                android:fontFamily="@font/quicksand_regular"
                 />
 
             <TextView
@@ -244,9 +267,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="8dp"
-                android:text="@string/btn_uf"
+                android:text="@string/btn_uf_"
                 android:textSize="22sp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/quicksand_medium"
                 />
 
             <Button
@@ -255,13 +279,14 @@
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
                 android:textSize="28sp"
-                android:paddingStart="12dp"
-                android:paddingEnd="12dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
                 android:textColor="@color/white"
                 style="?android:spinnerStyle"
                 android:onClick="openDatePicker"
                 android:hint="@string/btn_uf"
                 android:gravity="center_vertical"
+                android:fontFamily="@font/quicksand_regular"
                 />
 
             <TextView
@@ -269,9 +294,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:layout_marginStart="8dp"
-                android:text="@string/txt_email"
+                android:text="@string/txt_email_"
                 android:textSize="22sp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/quicksand_medium"
                 />
 
             <EditText
@@ -285,16 +311,19 @@
                 android:inputType="textEmailAddress"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:fontFamily="@font/quicksand_regular"
+                />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="8dp"
-                android:text="@string/txt_pw"
+                android:text="@string/txt_pw_"
                 android:textSize="22sp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/quicksand_medium"
                 />
 
             <EditText
@@ -309,6 +338,7 @@
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
                 android:textSize="20sp"
+                android:fontFamily="@font/quicksand_regular"
                 />
 
 
@@ -326,7 +356,7 @@
                 android:textAllCaps="false"
                 android:textSize="28sp"
                 android:textColor="@color/white"
-                android:fontFamily="@font/raleway_bold"
+                android:fontFamily="@font/quicksand_bold"
                 />
 
         </LinearLayout>

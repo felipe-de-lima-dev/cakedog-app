@@ -11,16 +11,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 import com.example.cakedog.ShoppingCart;
 
 public class Home extends AppCompatActivity {
     private LinearLayout lnAlterQuantity;
-    ImageView img1, img2, img3, img4;
+    private ImageView img1, img2, img3, img4;
     private ScrollView scrSimples, scrPers, scrTiskos, scrEspec;
     private Button btnSmp, btnPers, btnTiskos, btnEspec;
     private TextView txtQuantityItem;
     private int qtdeProd = 1;
+    private Button btnCart, btnUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,52 +39,67 @@ public class Home extends AppCompatActivity {
         scrEspec = findViewById(R.id.scrViewEspecial);
         lnAlterQuantity = findViewById(R.id.alterQuantityItem);
         txtQuantityItem = findViewById(R.id.txtQuantityItem);
+        btnCart = findViewById(R.id.btnToCart);
+        btnUser = findViewById(R.id.btnToUser);
         btnSelectorChanger();
+        btnCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toCart();
+            }
+        });
+        btnUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Em desenvolvimento", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public void showSimples(View v) {
-        if(scrEspec.getVisibility() == scrEspec.VISIBLE || scrPers.getVisibility() == scrPers.VISIBLE || scrTiskos.getVisibility() == scrTiskos.VISIBLE) {
-            scrSimples.setVisibility(scrSimples.VISIBLE);
-            scrEspec.setVisibility(scrEspec.GONE);
-            scrPers.setVisibility(scrEspec.GONE);
-            scrTiskos.setVisibility(scrEspec.GONE);
+        if(scrEspec.getVisibility() == View.VISIBLE || scrPers.getVisibility() == View.VISIBLE || scrTiskos.getVisibility() == View.VISIBLE) {
+            scrSimples.setVisibility(View.VISIBLE);
+            scrEspec.setVisibility(View.GONE);
+            scrPers.setVisibility(View.GONE);
+            scrTiskos.setVisibility(View.GONE);
         }
         btnSelectorChanger();
     }
 
     public void showPers(View v) {
-        if(scrSimples.getVisibility() == scrSimples.VISIBLE || scrEspec.getVisibility() == scrEspec.VISIBLE || scrTiskos.getVisibility() == scrTiskos.VISIBLE) {
-            scrPers.setVisibility(scrSimples.VISIBLE);
-            scrEspec.setVisibility(scrEspec.GONE);
-            scrSimples.setVisibility(scrEspec.GONE);
-            scrTiskos.setVisibility(scrEspec.GONE);
+        if(scrSimples.getVisibility() == View.VISIBLE || scrEspec.getVisibility() == View.VISIBLE || scrTiskos.getVisibility() == View.VISIBLE) {
+            scrPers.setVisibility(View.VISIBLE);
+            scrEspec.setVisibility(View.GONE);
+            scrSimples.setVisibility(View.GONE);
+            scrTiskos.setVisibility(View.GONE);
         }
         btnSelectorChanger();
     }
 
     public void showTiskos(View v) {
-        if(scrEspec.getVisibility() == scrEspec.VISIBLE || scrPers.getVisibility() == scrPers.VISIBLE || scrSimples.getVisibility() == scrSimples.VISIBLE) {
-            scrTiskos.setVisibility(scrSimples.VISIBLE);
-            scrEspec.setVisibility(scrEspec.GONE);
-            scrPers.setVisibility(scrEspec.GONE);
-            scrSimples.setVisibility(scrEspec.GONE);
+        if(scrEspec.getVisibility() == View.VISIBLE || scrPers.getVisibility() == View.VISIBLE || scrSimples.getVisibility() == View.VISIBLE) {
+            scrTiskos.setVisibility(View.VISIBLE);
+            scrEspec.setVisibility(View.GONE);
+            scrPers.setVisibility(View.GONE);
+            scrSimples.setVisibility(View.GONE);
         }
         btnSelectorChanger();
     }
 
     public void showEspecial(View v) {
-        if(scrSimples.getVisibility() == scrSimples.VISIBLE || scrPers.getVisibility() == scrPers.VISIBLE || scrTiskos.getVisibility() == scrTiskos.VISIBLE) {
-            scrEspec.setVisibility(scrSimples.VISIBLE);
-            scrSimples.setVisibility(scrEspec.GONE);
-            scrPers.setVisibility(scrEspec.GONE);
-            scrTiskos.setVisibility(scrEspec.GONE);
+        if(scrSimples.getVisibility() == View.VISIBLE || scrPers.getVisibility() == View.VISIBLE || scrTiskos.getVisibility() == View.VISIBLE) {
+            scrEspec.setVisibility(View.VISIBLE);
+            scrSimples.setVisibility(View.GONE);
+            scrPers.setVisibility(View.GONE);
+            scrTiskos.setVisibility(View.GONE);
         }
         btnSelectorChanger();
     }
 
     public void btnSelectorChanger() {
-        if(scrSimples.getVisibility() == scrSimples.VISIBLE) {
+        if(scrSimples.getVisibility() == View.VISIBLE) {
             btnSmp.setBackgroundResource(R.drawable.btn_home_cake_selector_selected);
+            btnSmp.setTextColor(getResources().getColor(R.color.white));
             btnPers.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnTiskos.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnEspec.setBackgroundResource(R.drawable.btn_home_cake_selector);
@@ -95,8 +112,9 @@ public class Home extends AppCompatActivity {
             img3.setImageResource(R.drawable.bolo_simples);
             img4.setImageResource(R.drawable.bolo_simples);
         }
-        else if(scrPers.getVisibility() == scrPers.VISIBLE) {
+        else if(scrPers.getVisibility() == View.VISIBLE) {
             btnPers.setBackgroundResource(R.drawable.btn_home_cake_selector_selected);
+            btnPers.setTextColor(getResources().getColor(R.color.white));
             btnSmp.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnTiskos.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnEspec.setBackgroundResource(R.drawable.btn_home_cake_selector);
@@ -109,8 +127,9 @@ public class Home extends AppCompatActivity {
             img3.setImageResource(R.drawable.bolo_pers2);
             img4.setImageResource(R.drawable.bolo_pers2);
         }
-        else if(scrTiskos.getVisibility() == scrTiskos.VISIBLE) {
+        else if(scrTiskos.getVisibility() == View.VISIBLE) {
             btnTiskos.setBackgroundResource(R.drawable.btn_home_cake_selector_selected);
+            btnTiskos.setTextColor(getResources().getColor(R.color.white));
             btnPers.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnSmp.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnEspec.setBackgroundResource(R.drawable.btn_home_cake_selector);
@@ -123,8 +142,9 @@ public class Home extends AppCompatActivity {
             img3.setImageResource(R.drawable.caketisko);
             img4.setImageResource(R.drawable.caketisko);
         }
-        else if(scrEspec.getVisibility() == scrEspec.VISIBLE) {
+        else if(scrEspec.getVisibility() == View.VISIBLE) {
             btnEspec.setBackgroundResource(R.drawable.btn_home_cake_selector_selected);
+            btnEspec.setTextColor(getResources().getColor(R.color.white));
             btnPers.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnTiskos.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnSmp.setBackgroundResource(R.drawable.btn_home_cake_selector);
@@ -139,7 +159,7 @@ public class Home extends AppCompatActivity {
         }
     }
 
-    public void toCart(View v) {
+    public void toCart() {
         Intent change = new Intent(Home.this, ShoppingCart.class);
         startActivity(change);
         lnAlterQuantity.setVisibility(View.GONE);
