@@ -26,18 +26,9 @@ public class LoginUser extends AppCompatActivity {
 
         txtUser = findViewById(R.id.txtUser);
         txtPw = findViewById(R.id.txtPw);
-        checkConnection();
+        connect.enterDataBase(this);
     }
 
-    public void checkConnection() {
-        if(ConnectionToSQL.conDb) {
-            connect.enterDataBase(this);
-            statusDb = true;
-        } else {
-            Toast.makeText(this, "Não conectado ao banco", Toast.LENGTH_LONG).show();
-            statusDb = false;
-        }
-    }
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this).setMessage("Tem certeza que deseja sair?").setCancelable(false).setPositiveButton("Sim", new DialogInterface.OnClickListener() {
@@ -49,34 +40,12 @@ public class LoginUser extends AppCompatActivity {
 
     public void toHome(View v) {
         String user = "", pw = "";
-        if(statusDb) {
+        try {
+            user = txtUser.getText().toString();
+            pw = txtPw.getText().toString();
             try {
-                user = txtUser.getText().toString();
-                pw = txtPw.getText().toString();
-                try {
-                    ConnectionToSQL.reSet = ConnectionToSQL.stmt.executeQuery("SELECT * FROM Cliente WHERE email_cli LIKE '" + user + "' AND senha_cli = '" + pw + "'");
-                    if(ConnectionToSQL.reSet.next()) {
-                        Intent change = new Intent(LoginUser.this, Home.class);
-                        startActivity(change);
-                        finish();
-                    } else {
-                        Toast.makeText(this, "Dados inválidos", Toast.LENGTH_LONG).show();
-                        txtUser.setText("");
-                        txtPw.setText("");
-                        txtUser.requestFocus();
-                    }
-                } catch(SQLException ex) {
-                    Toast.makeText(this, ex.toString(), Toast.LENGTH_LONG).show();
-                }
-
-            } catch(Exception ex) {
-                Toast.makeText(this, "Digite seu e-mail ou senha", Toast.LENGTH_LONG).show();
-            }
-        } else {
-            try {
-                user = txtUser.getText().toString();
-                pw = txtPw.getText().toString();
-                if(user.equals("1") && pw.equals("1")) {
+                ConnectionToSQL.reSet = ConnectionToSQL.stmt.executeQuery("SELECT * FROM Cliente WHERE email_cli LIKE '" + user + "' AND senha_cli = '" + pw + "'");
+                if(ConnectionToSQL.reSet.next()) {
                     Intent change = new Intent(LoginUser.this, Home.class);
                     startActivity(change);
                     finish();
@@ -86,9 +55,12 @@ public class LoginUser extends AppCompatActivity {
                     txtPw.setText("");
                     txtUser.requestFocus();
                 }
-            } catch(Exception ex) {
-                Toast.makeText(this, "Digite seu e-mail ou senha", Toast.LENGTH_LONG).show();
+            } catch(SQLException ex) {
+                Toast.makeText(this, ex.toString(), Toast.LENGTH_LONG).show();
             }
+
+        } catch(Exception ex) {
+            Toast.makeText(this, "Digite seu e-mail ou senha", Toast.LENGTH_LONG).show();
         }
     }
 
