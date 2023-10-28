@@ -9,39 +9,11 @@
     android:background="@color/light_bege"
     tools:context=".RegisterUser">
 
-    <TextView
-        android:id="@+id/title_reg"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/title_reg"
-        android:textSize="40sp"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:fontFamily="@font/quicksand_regular"
-        android:textStyle="bold"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:background="@color/bege"
-        />
-
-    <View
-        android:id="@+id/separator"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@drawable/prod_separator"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_reg"
-        />
-
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/separator"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -54,9 +26,36 @@
             android:layout_gravity="center_horizontal">
 
             <TextView
+                android:id="@+id/title_reg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/title_reg"
+                android:textSize="40sp"
+                android:textColor="@color/black"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/quicksand_regular"
+                android:textStyle="bold"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                />
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/prod_separator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_reg"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:layout_marginStart="8dp"
                 android:text="@string/txt_name_"
                 android:textSize="22sp"
@@ -281,7 +280,7 @@
                 android:textSize="28sp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 style="?android:spinnerStyle"
                 android:onClick="openDatePicker"
                 android:hint="@string/btn_uf"
