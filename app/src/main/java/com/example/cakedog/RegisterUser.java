@@ -56,7 +56,7 @@ public class RegisterUser extends AppCompatActivity {
     //ConnectionToSQL connect = new ConnectionToSQL();
     EditText txtName, cpf, phone, address, neibhood, postalCode, city, email, pw;
     private DatePickerDialog datePickerDialog;
-    private Button btnDate, btnUF;
+    private Button btnDate, btnUF, btnSave, btnBirthDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +77,7 @@ public class RegisterUser extends AppCompatActivity {
         pw = findViewById(R.id.txtPw);
         btnDate = findViewById(R.id.btnBirthDate);
         btnUF = findViewById(R.id.btnUF);
+        btnSave = findViewById(R.id.btnSave);
         final ArrayAdapter<String> ufAdapt = new ArrayAdapter<>(RegisterUser.this, android.R.layout.select_dialog_singlechoice);
         ufAdapt.addAll(ufList);
         builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -98,29 +99,21 @@ public class RegisterUser extends AppCompatActivity {
                 builder.show();
             }
         });
-        /* ----------------------MÉTODO PARA COLOCAR UM - NO EDITTEXT------------------------------
-        postalCode.addTextChangedListener(new TextWatcher() {
+        btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (!s.toString().contains("-") && s.length() > 5) {
-                    String.substring(s);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
+            public void onClick(View view) {
+                doRegister();
             }
         });
-         */
+//        btnBirthDate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                openDatePicker();
+//            }
+//        });
     }
 
-    public void doRegister(View v) {
+    public void doRegister() {
         try {
             String strName, strCPF, strBirthDate, strPhone, strAddress, strNebhood, strPostalCode, strCity, strEmail, strPw;
             strName = txtName.getText().toString();
@@ -134,14 +127,14 @@ public class RegisterUser extends AppCompatActivity {
             strEmail = email.getText().toString();
             strPw = pw.getText().toString();
             ConnectionToSQL.stmt.executeUpdate(
-                    "INSERT INTO Cliente(nome_cli, cpf_cli, telefone_cli, email_cli, senha_cli, dt_cadastro, is_cliente_active, dt_inativo, dt_nascimento)" +
-                    "VALUES('" + strName + "','" + strCPF + "','" + strPhone + "','" + strEmail + "','" + strPw + "', GETDATE(), 1, NULL,'" + strBirthDate + "')"
+                    "INSERT INTO usuario(nome_user, cpf_user, telefone_user, email_user, senha_user, dt_cadastro, is_user_active, dt_inativo, dt_nascimento, tipo_user)" +
+                    "VALUES('" + strName + "','" + strCPF + "','" + strPhone + "','" + strEmail + "','" + strPw + "', GETDATE(), 1, NULL,'" + strBirthDate + "', 0)"
             );
             ConnectionToSQL.stmt.executeUpdate(
-                    "INSERT INTO Endereco_cliente(id_cli, endereco_cli, bairro, cep, cidade, estado_uf, dt_cadastro, tipo_endereco) " +
+                    "INSERT INTO endereco_user(id_user, endereco, bairro, cep, cidade, estado_uf, dt_cadastro, tipo_endereco) " +
                       "VALUES(@@IDENTITY, '" + strAddress + "', '" + strNebhood + "', '" + strPostalCode + "', '" + strCity + "', '" + ufSelected + "', GETDATE(), 'Principal')"
             );
-            ConnectionToSQL.reSet = ConnectionToSQL.stmt.executeQuery("SELECT COUNT(*) FROM Cliente WHERE id_cli = " + strCPF +"");
+            ConnectionToSQL.reSet = ConnectionToSQL.stmt.executeQuery("SELECT COUNT(*) FROM usuario WHERE id_user = " + strCPF +"");
             if(ConnectionToSQL.reSet.next()) {
                 Toast.makeText(this, "Cadastro feito com sucesso", Toast.LENGTH_LONG).show();
                 finish();
@@ -149,7 +142,7 @@ public class RegisterUser extends AppCompatActivity {
                 Toast.makeText(this, "Não cadastrado", Toast.LENGTH_LONG).show();
             }
         } catch(SQLException ex) {
-            Toast.makeText(this, "Necessário preencher todos os campos para finalizar o cadastro", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "" + ex, Toast.LENGTH_LONG).show();
         }
     }
 

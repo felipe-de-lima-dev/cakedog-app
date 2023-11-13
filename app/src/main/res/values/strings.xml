@@ -31,7 +31,7 @@
     <string name="btn_tisco">CakeTiscos</string>
     <string name="btn_espec">Especiais</string>
     <string name="home_ttl">Escolha o sabor de bolo</string>
-    <string name="btn_show_prod">Adc. ao carrinho</string>
+    <string name="btn_show_prod">Adicionar ao carrinho:</string>
     <string name="btn_cart">Carrinho</string>
     <string name="btn_plus">+</string>
     <string name="txt_quantity">1</string>

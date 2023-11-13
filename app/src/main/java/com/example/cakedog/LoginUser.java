@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,8 +17,8 @@ import java.sql.SQLException;
 
 public class LoginUser extends AppCompatActivity {
     private EditText txtUser, txtPw;
+    private Button btnEnter, btnToRegister;
     ConnectionToSQL connect = new ConnectionToSQL();
-    boolean statusDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,20 @@ public class LoginUser extends AppCompatActivity {
         txtUser = findViewById(R.id.txtUser);
         txtPw = findViewById(R.id.txtPw);
         connect.enterDataBase(this);
+        btnEnter = findViewById(R.id.btnEnter);
+        btnToRegister = findViewById(R.id.btnToRegister);
+        btnEnter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toHome();
+            }
+        });
+        btnToRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toRegister();
+            }
+        });
     }
 
     @Override
@@ -38,13 +53,13 @@ public class LoginUser extends AppCompatActivity {
                 }).setNegativeButton("Não", null).show();
     }
 
-    public void toHome(View v) {
+    public void toHome() {
         String user = "", pw = "";
         try {
             user = txtUser.getText().toString();
             pw = txtPw.getText().toString();
             try {
-                ConnectionToSQL.reSet = ConnectionToSQL.stmt.executeQuery("SELECT * FROM Cliente WHERE email_cli LIKE '" + user + "' AND senha_cli = '" + pw + "'");
+                ConnectionToSQL.reSet = ConnectionToSQL.stmt.executeQuery("SELECT * FROM usuario WHERE email_user LIKE '" + user + "' AND senha_user = '" + pw + "'");
                 if(ConnectionToSQL.reSet.next()) {
                     Intent change = new Intent(LoginUser.this, Home.class);
                     startActivity(change);
@@ -64,7 +79,7 @@ public class LoginUser extends AppCompatActivity {
         }
     }
 
-    public void toRegister(View v) {
+    public void toRegister() {
         Intent change = new Intent(LoginUser.this, RegisterUser.class);
         startActivity(change);
     }

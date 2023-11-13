@@ -212,8 +212,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    android:onClick="showQuantityItem"
-                    tools:src="@drawable/bolo_simples" />
+                    tools:src="@drawable/bolo_simples"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -228,31 +228,44 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtSm2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtSm3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <Button
                         android:id="@+id/btnCartSm1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_width="70dp"
+                        android:layout_height="50dp"
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/imgCartSm1"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:background="@drawable/ic_add_to_cart"
+                            android:contentDescription="@string/btn_add_card"
+                            android:textAllCaps="false"
+                            />
+
+                    </Button>
 
                 </LinearLayout>
 

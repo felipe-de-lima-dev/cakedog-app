@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="UsingOnClickInXml"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_bege"
@@ -124,11 +123,11 @@
                 android:paddingEnd="8dp"
                 android:textSize="28sp"
                 style="?android:spinnerStyle"
-                android:onClick="openDatePicker"
                 android:hint="@string/btn_birth_date"
                 android:textColor="@color/black"
                 android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_regular"
+                android:onClick="openDatePicker"
                 />
 
             <TextView
@@ -282,7 +281,6 @@
                 android:paddingEnd="8dp"
                 android:textColor="@color/black"
                 style="?android:spinnerStyle"
-                android:onClick="openDatePicker"
                 android:hint="@string/btn_uf"
                 android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_regular"
@@ -351,7 +349,6 @@
                 android:layout_gravity="center_horizontal"
                 android:text="@string/btn_save"
                 android:background="@drawable/btn_round_corner"
-                android:onClick="doRegister"
                 android:textAllCaps="false"
                 android:textSize="28sp"
                 android:textColor="@color/white"
