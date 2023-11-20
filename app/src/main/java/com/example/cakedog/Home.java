@@ -1,33 +1,35 @@
 package com.example.cakedog;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.LinearLayoutCompat;
-
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
+import androidx.core.content.ContextCompat;
+import androidx.core.widget.NestedScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Home extends AppCompatActivity {
-    private LinearLayout lnAlterQuantity;
-    private LinearLayoutCompat btnCartSm1;
-    private ImageView img1, img2, img3, img4;
-    private ScrollView scrSimples, scrPers, scrTiskos, scrEspec;
-    private AppCompatButton btnSmp, btnPers, btnTiskos, btnEspec;
+    private LinearLayoutCompat lnAlterQuantity;
+    private LinearLayoutCompat btnCartSm1, btnCartSm2, btnCartSm3, btnCartSm4, btnCartSm5;
+    private AppCompatImageView img1, img2, img3, img4, img5;
+    private NestedScrollView scrSimples, scrPers, scrTiskos, scrEspec;
+    private AppCompatButton btnSmp, btnPers, btnTiskos, btnEspec, btnCart, btnUser;
     private TextView txtQuantityItem;
     private int qtdeProd = 1;
-    private AppCompatButton btnCart, btnUser;
 
+    @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_home);
 
         btnSmp = findViewById(R.id.btnSimples);
@@ -43,6 +45,10 @@ public class Home extends AppCompatActivity {
         btnCart = findViewById(R.id.btnToCart);
         btnUser = findViewById(R.id.btnToUser);
         btnCartSm1 = findViewById(R.id.btnCartSm1);
+        btnCartSm2 = findViewById(R.id.btnCartSm2);
+        btnCartSm3 = findViewById(R.id.btnCartSm3);
+        btnCartSm4 = findViewById(R.id.btnCartSm4);
+        btnCartSm5 = findViewById(R.id.btnCartSm5);
         btnSelectorChanger();
         btnCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,12 +62,7 @@ public class Home extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Em desenvolvimento", Toast.LENGTH_LONG).show();
             }
         });
-        btnCartSm1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showQuantityItem();
-            }
-        });
+        showQuantityButtons();
     }
 
     @Override
@@ -71,6 +72,43 @@ public class Home extends AppCompatActivity {
                 Home.super.finish();
             }
         }).setNegativeButton("Não", null).show();
+    }
+
+    public void showQuantityButtons() {
+        btnCartSm1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showQuantityItem();
+            }
+        });
+
+        btnCartSm2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showQuantityItem();
+            }
+        });
+
+        btnCartSm3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showQuantityItem();
+            }
+        });
+
+        btnCartSm4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showQuantityItem();
+            }
+        });
+
+        btnCartSm5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showQuantityItem();
+            }
+        });
     }
 
     public void showSimples(View v) {
@@ -116,7 +154,7 @@ public class Home extends AppCompatActivity {
     public void btnSelectorChanger() {
         if(scrSimples.getVisibility() == View.VISIBLE) {
             btnSmp.setBackgroundResource(R.drawable.btn_home_cake_selector_selected);
-            btnSmp.setTextColor(getResources().getColor(R.color.white));
+            btnSmp.setTextColor(ContextCompat.getColor(this, R.color.white));
             btnPers.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnTiskos.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnEspec.setBackgroundResource(R.drawable.btn_home_cake_selector);
@@ -124,14 +162,16 @@ public class Home extends AppCompatActivity {
             img2 = findViewById(R.id.imgSimples2);
             img3 = findViewById(R.id.imgSimples3);
             img4 = findViewById(R.id.imgSimples4);
-            img1.setImageResource(R.drawable.bolo_simples);
-            img2.setImageResource(R.drawable.bolo_simples);
-            img3.setImageResource(R.drawable.bolo_simples);
-            img4.setImageResource(R.drawable.bolo_simples);
+            img5 = findViewById(R.id.imgSimples5);
+            img1.setImageResource(R.drawable.bolo_simples_frango);
+            img2.setImageResource(R.drawable.bolo_simples_carne);
+            img3.setImageResource(R.drawable.bolo_simples_salmao);
+            img4.setImageResource(R.drawable.bolo_simples_vegetais);
+            img5.setImageResource(R.drawable.bolo_simples_frutas);
         }
         else if(scrPers.getVisibility() == View.VISIBLE) {
             btnPers.setBackgroundResource(R.drawable.btn_home_cake_selector_selected);
-            btnPers.setTextColor(getResources().getColor(R.color.white));
+            btnPers.setTextColor(ContextCompat.getColor(this, R.color.white));
             btnSmp.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnTiskos.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnEspec.setBackgroundResource(R.drawable.btn_home_cake_selector);
@@ -146,7 +186,7 @@ public class Home extends AppCompatActivity {
         }
         else if(scrTiskos.getVisibility() == View.VISIBLE) {
             btnTiskos.setBackgroundResource(R.drawable.btn_home_cake_selector_selected);
-            btnTiskos.setTextColor(getResources().getColor(R.color.white));
+            btnTiskos.setTextColor(ContextCompat.getColor(this, R.color.white));
             btnPers.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnSmp.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnEspec.setBackgroundResource(R.drawable.btn_home_cake_selector);
@@ -161,7 +201,7 @@ public class Home extends AppCompatActivity {
         }
         else if(scrEspec.getVisibility() == View.VISIBLE) {
             btnEspec.setBackgroundResource(R.drawable.btn_home_cake_selector_selected);
-            btnEspec.setTextColor(getResources().getColor(R.color.white));
+            btnEspec.setTextColor(ContextCompat.getColor(this, R.color.white));
             btnPers.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnTiskos.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnSmp.setBackgroundResource(R.drawable.btn_home_cake_selector);

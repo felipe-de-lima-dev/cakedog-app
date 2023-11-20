@@ -1,9 +1,12 @@
 package com.example.cakedog;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -59,9 +62,11 @@ public class RegisterUser extends AppCompatActivity {
     private DatePickerDialog datePickerDialog;
     private Button btnDate, btnUF, btnSave;
 
+    @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_register_user);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(RegisterUser.this);
