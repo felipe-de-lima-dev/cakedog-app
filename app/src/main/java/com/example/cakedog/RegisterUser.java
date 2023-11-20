@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -16,6 +15,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cakedog.ConnectionToSQL;
 import java.sql.SQLException;
@@ -56,7 +57,7 @@ public class RegisterUser extends AppCompatActivity {
     //ConnectionToSQL connect = new ConnectionToSQL();
     EditText txtName, cpf, phone, address, neibhood, postalCode, city, email, pw;
     private DatePickerDialog datePickerDialog;
-    private Button btnDate, btnUF, btnSave, btnBirthDate;
+    private Button btnDate, btnUF, btnSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,17 +106,17 @@ public class RegisterUser extends AppCompatActivity {
                 doRegister();
             }
         });
-//        btnBirthDate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                openDatePicker();
-//            }
-//        });
+        btnDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDatePicker();
+            }
+        });
     }
 
     public void doRegister() {
+        String strName, strCPF, strBirthDate, strPhone, strAddress, strNebhood, strPostalCode, strCity, strEmail, strPw, sqlRegUser, sqlRegEnd;
         try {
-            String strName, strCPF, strBirthDate, strPhone, strAddress, strNebhood, strPostalCode, strCity, strEmail, strPw;
             strName = txtName.getText().toString();
             strCPF = cpf.getText().toString();
             strBirthDate = btnDate.getText().toString();
@@ -126,23 +127,29 @@ public class RegisterUser extends AppCompatActivity {
             strCity = city.getText().toString();
             strEmail = email.getText().toString();
             strPw = pw.getText().toString();
-            ConnectionToSQL.stmt.executeUpdate(
-                    "INSERT INTO usuario(nome_user, cpf_user, telefone_user, email_user, senha_user, dt_cadastro, is_user_active, dt_inativo, dt_nascimento, tipo_user)" +
-                    "VALUES('" + strName + "','" + strCPF + "','" + strPhone + "','" + strEmail + "','" + strPw + "', GETDATE(), 1, NULL,'" + strBirthDate + "', 0)"
-            );
-            ConnectionToSQL.stmt.executeUpdate(
-                    "INSERT INTO endereco_user(id_user, endereco, bairro, cep, cidade, estado_uf, dt_cadastro, tipo_endereco) " +
-                      "VALUES(@@IDENTITY, '" + strAddress + "', '" + strNebhood + "', '" + strPostalCode + "', '" + strCity + "', '" + ufSelected + "', GETDATE(), 'Principal')"
-            );
-            ConnectionToSQL.reSet = ConnectionToSQL.stmt.executeQuery("SELECT COUNT(*) FROM usuario WHERE id_user = " + strCPF +"");
-            if(ConnectionToSQL.reSet.next()) {
-                Toast.makeText(this, "Cadastro feito com sucesso", Toast.LENGTH_LONG).show();
-                finish();
+            sqlRegUser = "INSERT INTO usuario(nome_user, cpf_user, telefone_user, email_user, senha_user, dt_cadastro, is_user_active, dt_inativo, dt_nascimento, tipo_user)" +
+                    "VALUES('" + strName + "','" + strCPF + "','" + strPhone + "','" + strEmail + "','" + strPw + "', GETDATE(), 1, NULL,'" + strBirthDate + "', 0)";
+            sqlRegEnd = "INSERT INTO endereco_user(id_user, endereco, bairro, cep, cidade, estado_uf, dt_cadastro, tipo_endereco) " +
+                    "VALUES(@@IDENTITY, '" + strAddress + "', '" + strNebhood + "', '" + strPostalCode + "', '" + strCity + "', '" + ufSelected + "', GETDATE(), 'Principal')";
+            if(!strName.isEmpty() && !strCPF.isEmpty() && !strPhone.isEmpty() && !strAddress.isEmpty() && !strNebhood.isEmpty() && !strPostalCode.isEmpty() && !strCity.isEmpty() && !strEmail.isEmpty() && !strPw.isEmpty() && !strBirthDate.isEmpty() && ufSelected != null) {
+                try {
+                    ConnectionToSQL.reSet = ConnectionToSQL.stmt.executeQuery("SELECT COUNT(*) AS resultado FROM usuario WHERE email_user = '" + strEmail + "'");
+                    if (ConnectionToSQL.reSet.next()) {
+                        ConnectionToSQL.stmt.executeUpdate(sqlRegUser);
+                        ConnectionToSQL.stmt.executeUpdate(sqlRegEnd);
+                        Toast.makeText(this, "Cadastro feito com sucesso", Toast.LENGTH_LONG).show();
+                        finish();
+                    } else {
+                        Toast.makeText(this, "Não cadastrado", Toast.LENGTH_LONG).show();
+                    }
+                } catch (SQLException ex) {
+                    Toast.makeText(this, ex.toString(), Toast.LENGTH_LONG).show();
+                }
             } else {
-                Toast.makeText(this, "Não cadastrado", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Insira todas as informações", Toast.LENGTH_LONG).show();
             }
-        } catch(SQLException ex) {
-            Toast.makeText(this, "" + ex, Toast.LENGTH_LONG).show();
+        } catch(Exception ex) {
+            Toast.makeText(this, ex.toString(), Toast.LENGTH_LONG).show();
         }
     }
 
@@ -173,7 +180,7 @@ public class RegisterUser extends AppCompatActivity {
         return day + "/" + month + "/" + year;
     }
 
-    public void openDatePicker(View v) {
+    public void openDatePicker() {
         datePickerDialog.show();
     }
 

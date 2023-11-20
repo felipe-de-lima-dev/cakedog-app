@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,7 +8,7 @@
     tools:context=".Payment"
     android:background="@color/light_bege">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
             android:contentDescription="@string/app_name"
             android:src="@drawable/logo_oficial" />
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <TextView
         android:id="@+id/txtTitle"
@@ -138,14 +138,6 @@
                         android:layout_weight="1"
                         />
 
-                    <ImageView
-                        android:id="@+id/opt3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        app:srcCompat="@drawable/options"
-                        />
-
                 </LinearLayout>
 
             </LinearLayout>
@@ -198,30 +190,9 @@
                         android:layout_weight="1"
                         />
 
-                    <ImageView
-                        android:id="@+id/opt2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        app:srcCompat="@drawable/options"
-                        />
-
                 </LinearLayout>
 
             </LinearLayout>
-
-            <Button
-                android:id="@+id/btnAddCard"
-                android:layout_width="260dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
-                android:textAllCaps="false"
-                android:textSize="22sp"
-                android:fontFamily="@font/quicksand_bold"
-                android:text="@string/btn_add_card"
-                android:background="@drawable/btn_round_corner"
-                android:layout_gravity="center_horizontal"
-                />
 
             <View
                 android:id="@+id/paymentSeparator"
@@ -335,8 +306,8 @@
 
     <Button
         android:id="@+id/btnConfirm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -347,9 +318,10 @@
         android:fontFamily="@font/quicksand_bold"
         android:textStyle="bold"
         android:textSize="26sp"
+        android:textColor="@color/white"
         android:textAllCaps="false"
         android:text="@string/btn_confirm"
         android:onClick="conclude"
         />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,7 +10,7 @@
     tools:ignore="OnClickInXml"
     android:background="@color/light_bege">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,11 +28,12 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/logo_oficial" />
+            android:src="@drawable/logo_oficial"
+            />
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,7 +50,7 @@
             android:paddingEnd="30dp"
             android:paddingStart="30dp">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnToUser"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
@@ -62,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnToCart"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
@@ -72,7 +73,7 @@
 
         </LinearLayout>
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
@@ -90,7 +91,7 @@
             android:paddingStart="6dp"
             android:paddingEnd="6dp">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSimples"
                 android:layout_width="120dp"
                 android:layout_height="60dp"
@@ -103,9 +104,10 @@
                 android:onClick="showSimples"
                 android:text="@string/btn_simples"
                 android:textAllCaps="false"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnPers"
                 android:layout_width="190dp"
                 android:layout_height="60dp"
@@ -118,9 +120,10 @@
                 android:onClick="showPers"
                 android:text="@string/btn_pers"
                 android:textAllCaps="false"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnEspecial"
                 android:layout_width="140dp"
                 android:layout_height="60dp"
@@ -133,9 +136,10 @@
                 android:onClick="showEspecial"
                 android:text="@string/btn_espec"
                 android:textAllCaps="false"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnCaketisco"
                 android:layout_width="140dp"
                 android:layout_height="60dp"
@@ -147,7 +151,8 @@
                 android:onClick="showTiskos"
                 android:text="@string/btn_tisco"
                 android:textAllCaps="false"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                />
 
         </LinearLayout>
 
@@ -166,7 +171,8 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
+        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView"
+        />
 
     <View
         android:layout_width="match_parent"
@@ -247,17 +253,20 @@
                         android:text="TextView"
                         />
 
-                    <Button
+                    <androidx.appcompat.widget.LinearLayoutCompat
                         android:id="@+id/btnCartSm1"
-                        android:layout_width="70dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/btn_round_corner"
-                        android:onClick="showQuantityItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:gravity="center">
+                        android:background="@drawable/btn_round_corner">
 
-                        <ImageView
-                            android:id="@+id/imgCartSm1"
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn_add_card"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="42dp"
                             android:layout_height="42dp"
                             android:background="@drawable/ic_add_to_cart"
@@ -265,7 +274,7 @@
                             android:textAllCaps="false"
                             />
 
-                    </Button>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </LinearLayout>
 
@@ -285,7 +294,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/bolo_simples" />
+                    tools:src="@drawable/bolo_simples"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -300,23 +310,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtSm5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtSm6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartSm2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -324,7 +337,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -344,7 +358,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/bolo_simples" />
+                    tools:src="@drawable/bolo_simples"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -359,23 +374,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtSm8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtSm9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartSm3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -383,7 +401,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -403,7 +422,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/bolo_simples" />
+                    tools:src="@drawable/bolo_simples"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -418,23 +438,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtSm11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtSm12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartSm4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -442,7 +465,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -485,7 +509,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/festa_doggo"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -500,23 +525,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtPs2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtPs3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartPs1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -524,7 +552,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -544,7 +573,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/festa_doggo"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -559,23 +589,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtPs5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtPs6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartPs2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -583,7 +616,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -603,7 +637,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/festa_doggo"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -618,23 +653,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtPs8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtPs9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartPs3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -642,7 +680,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -662,7 +701,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/festa_doggo"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -677,23 +717,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtPs11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtPs12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartPs4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -701,7 +744,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -744,7 +788,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/festa_doggo"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -759,23 +804,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtTisko2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtTisko3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartTk1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -783,7 +831,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -803,7 +852,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/festa_doggo"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -818,23 +868,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtTisko5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtTisko6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartTk2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -842,7 +895,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -862,7 +916,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/festa_doggo"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -877,23 +932,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtTisko8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtTisko9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartTk3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -901,7 +959,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -921,7 +980,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/festa_doggo"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -936,23 +996,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtTisko11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtTisko12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartTk4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -960,7 +1023,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -1003,7 +1067,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/festa_doggo"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -1018,23 +1083,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtEspec2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtEspec3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartEs1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -1042,7 +1110,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -1062,7 +1131,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/festa_doggo"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -1077,23 +1147,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtEspec5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtEspec6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartEs2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -1101,7 +1174,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -1121,7 +1195,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/festa_doggo"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -1136,23 +1211,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtEspec8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtEspec9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartEs3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -1160,7 +1238,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -1180,7 +1259,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo" />
+                    tools:src="@drawable/festa_doggo"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -1195,23 +1275,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtEspec11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
                     <TextView
                         android:id="@+id/txtEspec12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnCartEs4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -1219,7 +1302,8 @@
                         android:background="@drawable/btn_round_corner"
                         android:onClick="showQuantityItem"
                         android:text="@string/btn_show_prod"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        />
 
                 </LinearLayout>
 
@@ -1249,7 +1333,7 @@
             android:orientation="horizontal"
             android:background="@drawable/btn_quantity_style">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnMinus"
                 android:layout_width="5dp"
                 android:layout_height="wrap_content"
@@ -1275,7 +1359,7 @@
                 android:textStyle="bold"
                 />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnPlus"
                 android:layout_width="5dp"
                 android:layout_height="wrap_content"
@@ -1294,7 +1378,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnAddshowQuantityItem"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -1309,4 +1393,4 @@
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

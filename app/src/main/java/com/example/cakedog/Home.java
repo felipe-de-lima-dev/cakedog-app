@@ -2,29 +2,28 @@ package com.example.cakedog;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.HorizontalScrollView;
-import android.widget.ImageButton;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.LinearLayoutCompat;
+
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
-import com.example.cakedog.ShoppingCart;
 
 public class Home extends AppCompatActivity {
     private LinearLayout lnAlterQuantity;
+    private LinearLayoutCompat btnCartSm1;
     private ImageView img1, img2, img3, img4;
     private ScrollView scrSimples, scrPers, scrTiskos, scrEspec;
-    private Button btnSmp, btnPers, btnTiskos, btnEspec;
+    private AppCompatButton btnSmp, btnPers, btnTiskos, btnEspec;
     private TextView txtQuantityItem;
     private int qtdeProd = 1;
-    private Button btnCart, btnUser;
+    private AppCompatButton btnCart, btnUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +42,7 @@ public class Home extends AppCompatActivity {
         txtQuantityItem = findViewById(R.id.txtQuantityItem);
         btnCart = findViewById(R.id.btnToCart);
         btnUser = findViewById(R.id.btnToUser);
+        btnCartSm1 = findViewById(R.id.btnCartSm1);
         btnSelectorChanger();
         btnCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +54,12 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "Em desenvolvimento", Toast.LENGTH_LONG).show();
+            }
+        });
+        btnCartSm1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showQuantityItem();
             }
         });
     }
@@ -176,7 +182,7 @@ public class Home extends AppCompatActivity {
         lnAlterQuantity.setVisibility(View.GONE);
     }
 
-    public void showQuantityItem(View v) {
+    public void showQuantityItem() {
         if(lnAlterQuantity.getVisibility() == View.VISIBLE) {
             lnAlterQuantity.setVisibility(View.GONE);
         } else {

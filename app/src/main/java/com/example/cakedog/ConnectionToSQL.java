@@ -27,8 +27,8 @@ public class ConnectionToSQL {
 
         try {
 
-            String url = "jdbc:jtds:sqlserver://eu-az-sql-serv1.database.windows.net/bdcakedog";
-            con = DriverManager.getConnection(url, "administrador", "BfVmI3vTD8qG*Rdstzy8FEtk");
+            String url = "jdbc:jtds:sqlserver://192.168.1.104:1433/cakedog";
+            con = DriverManager.getConnection(url, "sa", "12345");
             stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         } catch(SQLException ex) {
             Toast.makeText(ctx.getApplicationContext(), "Não conectado" + ex, Toast.LENGTH_LONG).show();
