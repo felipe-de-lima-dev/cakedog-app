@@ -10,19 +10,21 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class Home extends AppCompatActivity {
     private LinearLayoutCompat lnAlterQuantity;
     private LinearLayoutCompat btnCartSm1, btnCartSm2, btnCartSm3, btnCartSm4, btnCartSm5;
     private AppCompatImageView img1, img2, img3, img4, img5;
     private NestedScrollView scrSimples, scrPers, scrTiskos, scrEspec;
     private AppCompatButton btnSmp, btnPers, btnTiskos, btnEspec, btnCart, btnUser;
-    private TextView txtQuantityItem;
+    private AppCompatTextView txtQuantityItem;
     private int qtdeProd = 1;
 
     @SuppressLint("SourceLockedOrientationActivity")
@@ -208,11 +210,9 @@ public class Home extends AppCompatActivity {
             img1 = findViewById(R.id.imgEspec1);
             img2 = findViewById(R.id.imgEspec2);
             img3 = findViewById(R.id.imgEspec3);
-            img4 = findViewById(R.id.imgEspec4);
             img1.setImageResource(R.drawable.bolo_espec);
             img2.setImageResource(R.drawable.bolo_espec);
             img3.setImageResource(R.drawable.bolo_espec);
-            img4.setImageResource(R.drawable.bolo_espec);
         }
     }
 
