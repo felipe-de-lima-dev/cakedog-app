@@ -30,6 +30,33 @@
             android:src="@drawable/logo_oficial"
             />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="35dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="@string/app_name"
+            android:textColor="@color/dark_bordo"
+            android:textSize="34sp"
+            />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="60dp"
+            android:background="@drawable/prod_separator"
+            android:layout_marginStart="10dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="@string/slogan"
+            android:textColor="@color/dark_bordo"
+            android:textSize="14sp"
+            />
+
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.appcompat.widget.Toolbar

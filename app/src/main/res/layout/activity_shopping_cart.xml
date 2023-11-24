@@ -22,26 +22,55 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imgIconDog"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/logo_oficial"
-            android:contentDescription="@string/app_name"/>
+            android:contentDescription="@string/app_name"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="35dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="@string/app_name"
+            android:textColor="@color/dark_bordo"
+            android:textSize="34sp"
+            />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="60dp"
+            android:background="@drawable/prod_separator"
+            android:layout_marginStart="10dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="@string/slogan"
+            android:textColor="@color/dark_bordo"
+            android:textSize="14sp"
+            />
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ScrollView
-        android:id="@+id/viewprod"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrCart"
         class="android.support.v4.view.ViewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="0dp"
         android:foregroundGravity="center_vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar1">
+        app:layout_constraintTop_toBottomOf="@id/toolbar1"
+        app:layout_constraintBottom_toTopOf="@id/lnCartBottom">
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -53,13 +82,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView12"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtCartTitle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -68,9 +97,10 @@
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="36sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    />
 
-            </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
             <View
                 android:layout_width="match_parent"
@@ -78,20 +108,22 @@
                 android:background="@drawable/prod_separator"
                 app:layout_constraintTop_toBottomOf="@id/txtTitle"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:fontFamily="@font/quicksand_regular"
-                android:text="@string/txt_add_items"
+                android:fontFamily="@font/quicksand_semi_bold"
+                android:text="@string/txt_items"
                 android:textColor="@color/black"
                 android:textSize="24sp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                />
 
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/produto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -100,7 +132,7 @@
                 android:background="@drawable/product_border"
                 android:padding="10dp">
 
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgProdView"
                     android:layout_width="200dp"
                     android:layout_height="match_parent"
@@ -108,41 +140,44 @@
                     android:contentDescription="@string/app_name"
                     />
 
-                <LinearLayout
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:fontFamily="@font/quicksand_regular"
-                        android:text="@string/txt_description" />
+                        android:text="@string/txt_description"
+                        />
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:fontFamily="@font/quicksand_regular"
-                        android:text="@string/txt_description" />
+                        android:text="@string/txt_description"
+                        />
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tv3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
                         android:fontFamily="@font/quicksand_bold"
-                        android:text="@string/txt_product_value" />
+                        android:text="@string/txt_product_value"
+                        />
 
-                    <LinearLayout
+                    <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnMinus"
                             android:layout_width="5dp"
                             android:layout_height="wrap_content"
@@ -153,7 +188,7 @@
                             android:fontFamily="@font/quicksand_bold"
                             />
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/txtQuantityItem"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -167,7 +202,7 @@
                             android:fontFamily="@font/quicksand_bold"
                             />
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnPlus"
                             android:layout_width="2dp"
                             android:layout_height="wrap_content"
@@ -178,72 +213,415 @@
                             android:fontFamily="@font/quicksand_bold"
                             />
 
-                    </LinearLayout>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
-                </LinearLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
-            </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </LinearLayout>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp">
 
-    </ScrollView>
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-    <LinearLayout
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtMiniTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/quicksand_semi_bold"
+                        android:text="@string/deliv_instr"
+                        android:textSize="24sp"
+                        android:textColor="@color/black"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnChangeAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/btn_change"
+                        android:textAlignment="textEnd"
+                        android:fontFamily="@font/quicksand_bold"
+                        android:textSize="24sp"
+                        android:textColor="@color/bordo"
+                        />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/product_border">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="10dp"
+                        android:contentDescription="@string/txt_end"
+                        app:srcCompat="@drawable/maps"
+                        android:layout_gravity="center_vertical"
+                        />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtAddres"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center_vertical"
+                            android:fontFamily="@font/quicksand_regular"
+                            android:text="@string/txt_street"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtNbrhood"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/quicksand_regular"
+                            android:text="@string/txt_neighborhood"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/lnPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/paymentTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/txt_app_payment"
+                            android:textAlignment="textStart"
+                            android:fontFamily="@font/quicksand_semi_bold"
+                            android:textSize="24sp"
+                            android:textColor="@color/black"
+                            />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/btnChangePayment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/btn_change"
+                            android:textAlignment="textEnd"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:textSize="24sp"
+                            android:textColor="@color/bordo"
+                            />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal"
+                        android:background="@drawable/product_border">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imgPaymentMethod"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="10dp"
+                            app:srcCompat="@drawable/ic_credit_card"
+                            android:layout_gravity="center_vertical"
+                            android:contentDescription="@string/credit_card"
+                            />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtPaymentSelected"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="@string/credit_card"
+                                android:fontFamily="@font/quicksand_regular"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtPaymentComplement"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_weight="0"
+                                android:text="@string/txt_number_card"
+                                android:fontFamily="@font/quicksand_regular"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/lnCartBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/bege">
 
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="2dp"
+            android:background="@drawable/prod_separator"
+            />
 
-            <TextView
-                android:id="@+id/textView13"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtValuesResume"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="@string/txt_total"
-                android:textColor="@color/black"
-                android:textSize="22sp"
-                android:fontFamily="@font/quicksand_regular"/>
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:textColor="@color/black"
-                android:textSize="22sp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/txt_value_resume"
                 android:fontFamily="@font/quicksand_bold"
-                android:text="@string/txt_total_value"
-                android:textAlignment="viewEnd" />
-        </LinearLayout>
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                />
 
-        <Button
-            android:id="@+id/btnContinue"
-            android:layout_width="280dp"
-            android:layout_height="60dp"
-            android:layout_margin="50dp"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:fontFamily="@font/quicksand_bold"
-            android:background="@drawable/btn_round_corner"
-            android:textSize="26sp"
-            android:text="@string/btn_continue"
-            android:onClick="toDeliver"
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/lnTotalResume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/txt_subtotal_title"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/quicksand_regular"
+                    />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtRealSign1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="@string/txt_real_sign"
+                    android:textAlignment="viewEnd"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtSubTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/txt_subtotal"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/quicksand_bold"
+                    />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/txt_deliver_title"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/quicksand_regular"
+                    />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtRealSign2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="@string/txt_real_sign"
+                    android:textAlignment="viewEnd"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtDeliverPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/txt_deliver_price"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/quicksand_bold"
+                    />
+                
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtTotalBuyTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/txt_total"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/quicksand_regular"
+                    />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtRealSign3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="@string/txt_real_sign"
+                    android:textAlignment="viewEnd"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtTotalBuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="@string/txt_total_value"
+                    android:textAlignment="viewEnd"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/prod_separator"
             />
 
-    </LinearLayout>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/light_bege">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEndShop"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="3dp"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:fontFamily="@font/quicksand_bold"
+                android:background="@drawable/btn_round_corner"
+                android:textSize="26sp"
+                android:text="@string/btn_end_shop"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

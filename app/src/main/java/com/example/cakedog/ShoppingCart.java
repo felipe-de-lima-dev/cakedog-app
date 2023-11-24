@@ -10,14 +10,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.core.widget.ImageViewCompat;
 
 import com.example.cakedog.Home;
 
 public class ShoppingCart extends AppCompatActivity {
-    ImageView img;
-    LinearLayout ln;
+    AppCompatImageView img;
     public static int qtdeItem = 1;
-    TextView qtdeProd;
+    AppCompatTextView qtdeProd, btnChangeAddress, btnChangePayment;
+    AppCompatButton btnEndShop;
 
     @SuppressLint("SourceLockedOrientationActivity")
     @Override
@@ -27,13 +31,31 @@ public class ShoppingCart extends AppCompatActivity {
         setContentView(R.layout.activity_shopping_cart);
 
         img = findViewById(R.id.imgProdView);
-        img.setImageResource(R.drawable.bolo_espec);
         qtdeProd = findViewById(R.id.txtQuantityItem);
+        btnEndShop = findViewById(R.id.btnEndShop);
+        btnChangeAddress = findViewById(R.id.btnChangeAddress);
+        btnChangePayment = findViewById(R.id.btnChangePayment);
         qtdeProd.setText(Integer.toString(qtdeItem));
-    }
-
-    public void toDeliver(View v) {
-        Intent change = new Intent(ShoppingCart.this, DeliveryScreen.class);
-        startActivity(change);
+        img.setImageResource(R.drawable.bolo_espec);
+        btnEndShop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+        btnChangeAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent change = new Intent(ShoppingCart.this, DeliveryScreen.class);
+                startActivity(change);
+            }
+        });
+        btnChangePayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent change = new Intent(ShoppingCart.this, Payment.class);
+                startActivity(change);
+            }
+        });
     }
 }

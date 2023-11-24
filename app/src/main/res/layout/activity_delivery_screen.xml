@@ -28,6 +28,33 @@
             android:src="@drawable/logo_oficial"
             android:contentDescription="@string/app_name"/>
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="35dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="@string/app_name"
+            android:textColor="@color/dark_bordo"
+            android:textSize="34sp"
+            />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="60dp"
+            android:background="@drawable/prod_separator"
+            android:layout_marginStart="10dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="@string/slogan"
+            android:textColor="@color/dark_bordo"
+            android:textSize="14sp"
+            />
+
     </androidx.appcompat.widget.Toolbar>
 
     <TextView
@@ -40,7 +67,8 @@
         android:fontFamily="@font/quicksand_bold"
         app:layout_constraintBottom_toTopOf="@id/scrViewLoc"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar1" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar1"
+        />
 
     <View
         android:id="@+id/separator"
@@ -85,7 +113,8 @@
                     android:layout_marginBottom="10dp"
                     android:fontFamily="@font/quicksand_semi_bold"
                     android:text="@string/deliv_instr"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    />
 
             </LinearLayout>
 
@@ -101,7 +130,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:contentDescription="@string/txt_end"
-                    app:srcCompat="@drawable/maps" />
+                    app:srcCompat="@drawable/maps"
+                    />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -118,7 +148,8 @@
                         android:layout_marginBottom="10dp"
                         android:gravity="center_vertical"
                         android:fontFamily="@font/quicksand_regular"
-                        android:text="@string/txt_street" />
+                        android:text="@string/txt_street"
+                        />
 
                     <TextView
                         android:id="@+id/txtNbrhood"
@@ -128,7 +159,8 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:fontFamily="@font/quicksand_regular"
-                        android:text="@string/txt_neighborhood" />
+                        android:text="@string/txt_neighborhood"
+                        />
 
                 </LinearLayout>
 

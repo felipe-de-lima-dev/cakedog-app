@@ -45,11 +45,15 @@
     <string name="spn_uf">Selecione o UF</string>
     <string name="txt_street">Rua Padrão</string>
     <string name="txt_neighborhood">Bairro Padrão</string>
-    <string name="txt_add_items">Adicionar mais itens</string>
+    <string name="txt_items">Itens:</string>
     <string name="txt_description">Descrição do produto</string>
     <string name="txt_product_value">R$ Valor do produto</string>
     <string name="txt_total">Total com entrega</string>
-    <string name="txt_total_value">R$ Total</string>
+    <string name="txt_total_value">0,00</string>
+    <string name="txt_subtotal_title">Subtotal</string>
+    <string name="txt_subtotal">0,00</string>
+    <string name="txt_deliver_title">Taxa de entrega</string>
+    <string name="txt_deliver_price">0,00</string>
     <string name="btn_birth_date">Data de nascimento</string>
     <string name="btn_birth_date_">Data de nascimento:</string>
     <string name="btn_uf">Selecione o UF</string>
@@ -59,4 +63,13 @@
     <string name="credit_card">Cartão de Crédito</string>
     <string name="cash">Dinheiro</string>
     <string name="pix">Pix</string>
+    <string name="slogan">Encomenda de bolos para seu cão</string>
+    <string name="txt_app_payment">Pagamento pelo app:</string>
+    <string name="txt_deliver_payment">Pagamento na entrega:</string>
+    <string name="btn_buy_more">Comprar mais</string>
+    <string name="btn_change">trocar</string>
+    <string name="txt_number_card">Nº do cartão</string>
+    <string name="txt_value_resume">Resumo de valores</string>
+    <string name="txt_real_sign">R$</string>
+    <string name="btn_end_shop">Finalizar compra</string>
 </resources>
