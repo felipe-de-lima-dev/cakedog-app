@@ -17,4 +17,8 @@
     <color name="bege">#F4BF96</color>
     <color name="bordo">#CE5A67</color>
     <color name="dark_bordo">#1F1717</color>
+    <color name="red">#FF0000</color>
+    <color name="blue">#0000FF</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="pink">#FE3278</color>
 </resources>

@@ -21,7 +21,8 @@ import java.sql.SQLException;
 public class LoginUser extends AppCompatActivity {
     private EditText txtUser, txtPw;
     private Button btnEnter, btnToRegister;
-    //ConnectionToSQL connect = new ConnectionToSQL();
+    ConnectionToSQL connect = new ConnectionToSQL();
+    UserInformations userInfo = new UserInformations();
 
     @SuppressLint("SourceLockedOrientationActivity")
     @Override
@@ -32,7 +33,7 @@ public class LoginUser extends AppCompatActivity {
 
         txtUser = findViewById(R.id.txtUser);
         txtPw = findViewById(R.id.txtPw);
-        //connect.enterDataBase(this);
+        connect.enterDataBase(this);
         btnEnter = findViewById(R.id.btnEnter);
         btnToRegister = findViewById(R.id.btnToRegister);
         btnEnter.setOnClickListener(new View.OnClickListener() {
@@ -63,15 +64,18 @@ public class LoginUser extends AppCompatActivity {
         try {
             user = txtUser.getText().toString();
             pw = txtPw.getText().toString();
+            /*
             if(user.equals("user") && pw.equals("123")) {
                 Intent change = new Intent(LoginUser.this, Home.class);
                 startActivity(change);
                 finish();
             }
-            /*
+            */
             try {
-                ConnectionToSQL.reSet = ConnectionToSQL.stmt.executeQuery("SELECT * FROM usuario WHERE email_user LIKE '" + user + "' AND senha_user = '" + pw + "'");
+                ConnectionToSQL.reSet = ConnectionToSQL.stmt.executeQuery("SELECT id_user FROM usuario WHERE email_user LIKE '" + user + "' AND senha_user = '" + pw + "'");
                 if(ConnectionToSQL.reSet.next()) {
+                    int id = ConnectionToSQL.reSet.getInt("id_user");
+                    userInfo.setUserId(id);
                     Intent change = new Intent(LoginUser.this, Home.class);
                     startActivity(change);
                     finish();
@@ -84,8 +88,6 @@ public class LoginUser extends AppCompatActivity {
             } catch(SQLException ex) {
                 Toast.makeText(this, ex.toString(), Toast.LENGTH_LONG).show();
             }
-             */
-
         } catch(Exception ex) {
             Toast.makeText(this, "Digite seu e-mail ou senha", Toast.LENGTH_LONG).show();
         }

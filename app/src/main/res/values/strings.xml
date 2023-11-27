@@ -30,7 +30,13 @@
     <string name="btn_pers">Personalizados</string>
     <string name="btn_tisco">CakeTiscos</string>
     <string name="btn_espec">Especiais</string>
-    <string name="home_ttl">Escolha o sabor de bolo</string>
+    <string name="txt_title_simple">Escolha o sabor do bolo</string>
+    <string name="txt_title_simple_">Escolha o sabor do bolo:</string>
+    <string name="txt_choose_form">Escolha a forma do bolo:</string>
+    <string name="txt_choose_color">Escolha a cor da cobertura do bolo:</string>
+    <string name="txt_choose_photo">Escolha uma foto de raça:</string>
+    <string name="txt_title_pers">Personalize seu bolo</string>
+    <string name="txt_title_tiskos">Escolha a quantidade de CakeTiskos</string>
     <string name="btn_show_prod">Adicionar ao carrinho</string>
     <string name="btn_cart">Carrinho</string>
     <string name="btn_plus">+</string>
@@ -71,5 +77,25 @@
     <string name="txt_number_card">Nº do cartão</string>
     <string name="txt_value_resume">Resumo de valores</string>
     <string name="txt_real_sign">R$</string>
+    <string name="txt_plus_real">+ R$</string>
     <string name="btn_end_shop">Finalizar compra</string>
+    <string name="btn_alter_address">Alterar endereço</string>
+    <string name="btn_confirm_address">Confirmar endereço</string>
+    <string name="txt_chicken">Frango</string>
+    <string name="txt_meat">Carne Bovina</string>
+    <string name="txt_salmon">Salmão</string>
+    <string name="txt_veggies">Vegetais</string>
+    <string name="txt_fruits">Frutas</string>
+    <string name="txt_bone">Osso</string>
+    <string name="txt_square">Quadrado</string>
+    <string name="txt_round">Redondo</string>
+    <string name="txt_dog">Cachorro</string>
+    <string name="txt_blue">Azul</string>
+    <string name="txt_pink">Rosa</string>
+    <string name="txt_red">Vermelho</string>
+    <string name="txt_yellow">Amarelo</string>
 </resources>
+<!--
+    Poodle, Lhasa, Golden, Labrador, Doberman, Buldogue, Pug, Rottveiler, Pastor-Alemão, Pitbull, Chow Chow ou Nenhum
+    Azul, Rosa, Vermelho ou Amarelo
+-->

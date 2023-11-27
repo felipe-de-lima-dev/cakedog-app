@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.core.widget.ImageViewCompat;
 
 import com.example.cakedog.Home;
@@ -22,6 +24,7 @@ public class ShoppingCart extends AppCompatActivity {
     public static int qtdeItem = 1;
     AppCompatTextView qtdeProd, btnChangeAddress, btnChangePayment;
     AppCompatButton btnEndShop;
+    Home home = new Home();
 
     @SuppressLint("SourceLockedOrientationActivity")
     @Override
@@ -36,7 +39,7 @@ public class ShoppingCart extends AppCompatActivity {
         btnChangeAddress = findViewById(R.id.btnChangeAddress);
         btnChangePayment = findViewById(R.id.btnChangePayment);
         qtdeProd.setText(Integer.toString(qtdeItem));
-        img.setImageResource(R.drawable.bolo_espec);
+        img.setImageResource(R.drawable.bolo_simples_frango);
         btnEndShop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

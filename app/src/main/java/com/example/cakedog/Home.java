@@ -14,18 +14,95 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
+
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @SuppressWarnings("FieldCanBeLocal")
 public class Home extends AppCompatActivity {
-    private LinearLayoutCompat lnAlterQuantity;
+    private LinearLayoutCompat lnAlterQuantity, lnSimples;
     private LinearLayoutCompat btnCartSm1, btnCartSm2, btnCartSm3, btnCartSm4, btnCartSm5;
-    private AppCompatImageView img1, img2, img3, img4, img5;
+    private AppCompatImageView img1, img2, img3, img4, img5, imgPersFlavor, imgPersForm, imgPersColor, imgPersPhoto;
     private NestedScrollView scrSimples, scrPers, scrTiskos, scrEspec;
+    private Spinner spnFlavor, spnForm, spnColor, spnPhoto;
+    private CustomArrayAdapter arrayAdapter;
+    private String[] arrayFlavor = {
+            "Frango",
+            "Carne Bovina",
+            "Salmão",
+            "Vegatais",
+            "Frutas"
+    };
+    private int[] arrayFlavorImg = {
+            R.drawable.bolo_simples_frango,
+            R.drawable.bolo_simples_carne,
+            R.drawable.bolo_simples_salmao,
+            R.drawable.bolo_simples_vegetais,
+            R.drawable.bolo_simples_frutas
+    };
+    private String[] arrayForm = {
+            "Osso",
+            "Quadrado",
+            "Redondo",
+            "Cachorro"
+    };
+    private int[] arrayFormImg = {
+            R.drawable.forma_osso,
+            R.drawable.forma_quadrada,
+            R.drawable.forma_redonda,
+            R.drawable.forma_dog
+    };
+    private String[] arrayColor = {
+            "Azul",
+            "Rosa",
+            "Vermelho",
+            "Amarelo"
+    };
+    private int[] arrayColorId = {
+            R.color.blue,
+            R.color.pink,
+            R.color.red,
+            R.color.yellow
+    };
+    private String[] arrayPhotoText = {
+            "Poodle",
+            "Lhasa",
+            "Golden Retriever",
+            "Labrador Retriever",
+            "Doberman",
+            "Buldogue",
+            "Pug",
+            "Rottveiler",
+            "Pastor-Alemão",
+            "Pitbull",
+            "Chow Chow",
+            "Nenhum"
+    };
+    private int[] arrayPhotoImg = {
+            R.drawable.poodle,
+            R.drawable.lhasa,
+            R.drawable.golden_retriever,
+            R.drawable.labrador,
+            R.drawable.doberman,
+            R.drawable.buldogue,
+            R.drawable.pug,
+            R.drawable.rottweiler,
+            R.drawable.pastor_alemao,
+            R.drawable.pitbull,
+            R.drawable.chow_chow,
+            R.drawable.vazio
+    };
     private AppCompatButton btnSmp, btnPers, btnTiskos, btnEspec, btnCart, btnUser;
-    private AppCompatTextView txtQuantityItem;
+    private AppCompatTextView txtQuantityItem, txtTitle, txtPersFlavor, txtPersForm, txtPersColor, txtPersPhoto;
     private int qtdeProd = 1;
+    public int whoSmClicked = 0;
 
     @SuppressLint("SourceLockedOrientationActivity")
     @Override
@@ -51,6 +128,84 @@ public class Home extends AppCompatActivity {
         btnCartSm3 = findViewById(R.id.btnCartSm3);
         btnCartSm4 = findViewById(R.id.btnCartSm4);
         btnCartSm5 = findViewById(R.id.btnCartSm5);
+        lnSimples = findViewById(R.id.lnSimples);
+        txtTitle = findViewById(R.id.txtTitle);
+        imgPersFlavor = findViewById(R.id.imgPersFlavor);
+        imgPersForm = findViewById(R.id.imgPersForm);
+        imgPersColor = findViewById(R.id.imgPersColor);
+        imgPersPhoto = findViewById(R.id.imgPersPhoto);
+        txtPersFlavor = findViewById(R.id.txtPersFlavorTitle);
+        txtPersForm = findViewById(R.id.txtPersFormTitle);
+        txtPersColor = findViewById(R.id.txtPersColorTitle);
+        txtPersPhoto = findViewById(R.id.txtPersPhotoTitle);
+        spnFlavor = findViewById(R.id.spnFlavor);
+        spnForm = findViewById(R.id.spnForm);
+        spnColor = findViewById(R.id.spnColor);
+        spnPhoto = findViewById(R.id.spnPhoto);
+        List<String> listFlavor = new ArrayList<>(Arrays.asList(arrayFlavor));
+        arrayAdapter = new CustomArrayAdapter(this, R.layout.spinner_item_layout, listFlavor);
+        spnFlavor.setAdapter(arrayAdapter);
+        spnFlavor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                imgPersFlavor.setImageResource(arrayFlavorImg[i]);
+                txtPersFlavor.setText(arrayFlavor[i]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                imgPersFlavor.setImageResource(arrayFlavorImg[0]);
+                txtPersFlavor.setText(arrayFlavor[0]);
+            }
+        });
+        List<String> listForm = new ArrayList<>(Arrays.asList(arrayForm));
+        arrayAdapter = new CustomArrayAdapter(this, R.layout.spinner_item_layout, listForm);
+        spnForm.setAdapter(arrayAdapter);
+        spnForm.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                txtPersForm.setText(arrayForm[i]);
+                imgPersForm.setImageResource(arrayFormImg[i]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                txtPersForm.setText(arrayForm[0]);
+                imgPersForm.setImageResource(arrayFormImg[0]);
+            }
+        });
+        List<String> listColor = new ArrayList<>(Arrays.asList(arrayColor));
+        arrayAdapter = new CustomArrayAdapter(this, R.layout.spinner_item_layout, listColor);
+        spnColor.setAdapter(arrayAdapter);
+        spnColor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                txtPersColor.setText(arrayColor[i]);
+                imgPersColor.setBackgroundColor(getColor(arrayColorId[i]));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                txtPersColor.setText(arrayColor[0]);
+                imgPersColor.setBackgroundColor(getColor(arrayColorId[0]));
+            }
+        });
+        List<String> listPhoto = new ArrayList<>(Arrays.asList(arrayPhotoText));
+        arrayAdapter = new CustomArrayAdapter(this, R.layout.spinner_item_layout, listPhoto);
+        spnPhoto.setAdapter(arrayAdapter);
+        spnPhoto.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                txtPersPhoto.setText(arrayPhotoText[i]);
+                imgPersPhoto.setImageResource(arrayPhotoImg[i]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                txtPersPhoto.setText(arrayPhotoText[0]);
+                imgPersPhoto.setImageResource(arrayPhotoImg[0]);
+            }
+        });
         btnSelectorChanger();
         btnCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +235,7 @@ public class Home extends AppCompatActivity {
         btnCartSm1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                whoSmClicked = 1;
                 showQuantityItem();
             }
         });
@@ -87,6 +243,7 @@ public class Home extends AppCompatActivity {
         btnCartSm2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                whoSmClicked = 2;
                 showQuantityItem();
             }
         });
@@ -94,6 +251,7 @@ public class Home extends AppCompatActivity {
         btnCartSm3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                whoSmClicked = 3;
                 showQuantityItem();
             }
         });
@@ -101,6 +259,7 @@ public class Home extends AppCompatActivity {
         btnCartSm4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                whoSmClicked = 4;
                 showQuantityItem();
             }
         });
@@ -108,6 +267,7 @@ public class Home extends AppCompatActivity {
         btnCartSm5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                whoSmClicked = 5;
                 showQuantityItem();
             }
         });
@@ -160,6 +320,7 @@ public class Home extends AppCompatActivity {
             btnPers.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnTiskos.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnEspec.setBackgroundResource(R.drawable.btn_home_cake_selector);
+            txtTitle.setText(R.string.txt_title_simple);
             img1 = findViewById(R.id.imgSimples1);
             img2 = findViewById(R.id.imgSimples2);
             img3 = findViewById(R.id.imgSimples3);
@@ -177,14 +338,7 @@ public class Home extends AppCompatActivity {
             btnSmp.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnTiskos.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnEspec.setBackgroundResource(R.drawable.btn_home_cake_selector);
-            img1 = findViewById(R.id.imgPers1);
-            img2 = findViewById(R.id.imgPers2);
-            img3 = findViewById(R.id.imgPers3);
-            img4 = findViewById(R.id.imgPers4);
-            img1.setImageResource(R.drawable.bolo_pers2);
-            img2.setImageResource(R.drawable.bolo_pers2);
-            img3.setImageResource(R.drawable.bolo_pers2);
-            img4.setImageResource(R.drawable.bolo_pers2);
+            txtTitle.setText(R.string.txt_title_pers);
         }
         else if(scrTiskos.getVisibility() == View.VISIBLE) {
             btnTiskos.setBackgroundResource(R.drawable.btn_home_cake_selector_selected);
@@ -192,6 +346,7 @@ public class Home extends AppCompatActivity {
             btnPers.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnSmp.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnEspec.setBackgroundResource(R.drawable.btn_home_cake_selector);
+            txtTitle.setText(R.string.txt_title_tiskos);
             img1 = findViewById(R.id.imgTiskos1);
             img2 = findViewById(R.id.imgTiskos2);
             img3 = findViewById(R.id.imgTiskos3);
@@ -207,6 +362,7 @@ public class Home extends AppCompatActivity {
             btnPers.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnTiskos.setBackgroundResource(R.drawable.btn_home_cake_selector);
             btnSmp.setBackgroundResource(R.drawable.btn_home_cake_selector);
+            txtTitle.setText(R.string.txt_title_simple);
             img1 = findViewById(R.id.imgEspec1);
             img2 = findViewById(R.id.imgEspec2);
             img3 = findViewById(R.id.imgEspec3);
@@ -218,6 +374,7 @@ public class Home extends AppCompatActivity {
 
     public void toCart() {
         Intent change = new Intent(Home.this, ShoppingCart.class);
+        change.putExtra("lnSimples", lnSimples.getId());
         startActivity(change);
         lnAlterQuantity.setVisibility(View.GONE);
     }
