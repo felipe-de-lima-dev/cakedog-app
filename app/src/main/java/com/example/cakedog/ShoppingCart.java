@@ -16,6 +16,8 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.core.widget.ImageViewCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cakedog.Home;
 
@@ -25,6 +27,7 @@ public class ShoppingCart extends AppCompatActivity {
     AppCompatTextView qtdeProd, btnChangeAddress, btnChangePayment;
     AppCompatButton btnEndShop;
     Home home = new Home();
+    //private RecyclerView.Adapter adapter;
 
     @SuppressLint("SourceLockedOrientationActivity")
     @Override
@@ -33,13 +36,19 @@ public class ShoppingCart extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_shopping_cart);
 
-        img = findViewById(R.id.imgProdView);
-        qtdeProd = findViewById(R.id.txtQuantityItem);
+        //img = findViewById(R.id.imgProdView);
+        //qtdeProd = findViewById(R.id.txtQuantityItem);
         btnEndShop = findViewById(R.id.btnEndShop);
         btnChangeAddress = findViewById(R.id.btnChangeAddress);
         btnChangePayment = findViewById(R.id.btnChangePayment);
-        qtdeProd.setText(Integer.toString(qtdeItem));
-        img.setImageResource(R.drawable.bolo_simples_frango);
+//        qtdeProd.setText(Integer.toString(qtdeItem));
+//        img.setImageResource(R.drawable.bolo_simples_frango);
+        /*
+        RecyclerView recyclerView = findViewById(R.id.cartRecyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new CartAdapter(productToCart);
+        recyclerView.setAdapter(adapter);*/
         btnEndShop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -99,7 +99,7 @@ public class Home extends AppCompatActivity {
             R.drawable.chow_chow,
             R.drawable.vazio
     };
-    private AppCompatButton btnSmp, btnPers, btnTiskos, btnEspec, btnCart, btnUser;
+    private AppCompatButton btnSmp, btnPers, btnTiskos, btnEspec, btnCart, btnUser, btnMinus, btnPlus;
     private AppCompatTextView txtQuantityItem, txtTitle, txtPersFlavor, txtPersForm, txtPersColor, txtPersPhoto;
     private int qtdeProd = 1;
     public int whoSmClicked = 0;
@@ -119,7 +119,6 @@ public class Home extends AppCompatActivity {
         scrPers = findViewById(R.id.scrViewPers);
         scrTiskos = findViewById(R.id.scrViewTiskos);
         scrEspec = findViewById(R.id.scrViewEspecial);
-        lnAlterQuantity = findViewById(R.id.alterQuantityItem);
         txtQuantityItem = findViewById(R.id.txtQuantityItem);
         btnCart = findViewById(R.id.btnToCart);
         btnUser = findViewById(R.id.btnToUser);
@@ -350,11 +349,9 @@ public class Home extends AppCompatActivity {
             img1 = findViewById(R.id.imgTiskos1);
             img2 = findViewById(R.id.imgTiskos2);
             img3 = findViewById(R.id.imgTiskos3);
-            img4 = findViewById(R.id.imgTiskos4);
             img1.setImageResource(R.drawable.caketisko);
             img2.setImageResource(R.drawable.caketisko);
             img3.setImageResource(R.drawable.caketisko);
-            img4.setImageResource(R.drawable.caketisko);
         }
         else if(scrEspec.getVisibility() == View.VISIBLE) {
             btnEspec.setBackgroundResource(R.drawable.btn_home_cake_selector_selected);
@@ -374,9 +371,9 @@ public class Home extends AppCompatActivity {
 
     public void toCart() {
         Intent change = new Intent(Home.this, ShoppingCart.class);
-        change.putExtra("lnSimples", lnSimples.getId());
+        //change.putExtra("lnSimples", lnSimples.getId());
         startActivity(change);
-        lnAlterQuantity.setVisibility(View.GONE);
+        //lnAlterQuantity.setVisibility(View.GONE);
     }
 
     public void showQuantityItem() {
@@ -387,7 +384,7 @@ public class Home extends AppCompatActivity {
         }
     }
 
-    public void plusOne(View v) {
+    public void plusOne() {
         try {
             qtdeProd = Integer.parseInt(txtQuantityItem.getText().toString());
             qtdeProd++;
@@ -397,7 +394,7 @@ public class Home extends AppCompatActivity {
         }
     }
 
-    public void minusOne(View v) {
+    public void minusOne() {
         try {
             qtdeProd = Integer.parseInt(txtQuantityItem.getText().toString());
             if(qtdeProd < 2) {
@@ -411,8 +408,18 @@ public class Home extends AppCompatActivity {
         }
     }
 
-    public void addQtdeToCart(View v) {
+    public void addQtdeToCart() {
         ShoppingCart.qtdeItem = qtdeProd;
         lnAlterQuantity.setVisibility(View.GONE);
+        if(scrPers.getVisibility() == View.GONE) {
+            //addToCart();
+        }
+    }
+
+    private ArrayList<Product> productToCart = new ArrayList<>();
+
+    public void addToCart(Long productId, String productType, String productName, int productQuantity, double productPrice) {
+        Product item = new Product(productId, productType, productName, productQuantity, productPrice);
+        productToCart.add(item);
     }
 }

@@ -94,6 +94,15 @@
     <string name="txt_pink">Rosa</string>
     <string name="txt_red">Vermelho</string>
     <string name="txt_yellow">Amarelo</string>
+    <string name="txt_tiskos10">Pacote de Caketiskos 10 und</string>
+    <string name="txt_tiskos10_desc">Um pacote de petiscos para seu cão com 10 unidades cada.</string>
+    <string name="txt_tiskos10_valor">20,00</string>
+    <string name="txt_tiskos20">Pacote de Caketiskos 20 und</string>
+    <string name="txt_tiskos20_desc">Um pacote de petiscos para seu cão com 20 unidades cada.</string>
+    <string name="txt_tiskos20_valor">35,00</string>
+    <string name="txt_tiskos30">Pacote de Caketiskos 30 und</string>
+    <string name="txt_tiskos30_desc">Um pacote de petiscos para seu cão com 30 unidades cada.</string>
+    <string name="txt_tiskos30_valor">50,00</string>
 </resources>
 <!--
     Poodle, Lhasa, Golden, Labrador, Doberman, Buldogue, Pug, Rottveiler, Pastor-Alemão, Pitbull, Chow Chow ou Nenhum

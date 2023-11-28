@@ -1419,9 +1419,10 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lnTiskos1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="20dp"
                 android:gravity="end|bottom"
                 android:orientation="horizontal"
                 android:paddingStart="10dp"
@@ -1432,8 +1433,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo"
-                    />
+                    tools:src="@drawable/caketisko"
+                    android:layout_gravity="center_vertical"/>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -1443,49 +1444,113 @@
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp">
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txtTisko1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="TextView"
-                        />
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txtTisko2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="TextView"
-                        />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtTiskosTitle1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:text="@string/txt_tiskos10"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txtTisko3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="TextView"
-                        />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtTiskosDesc1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/quicksand_semi_bold"
+                            android:text="@string/txt_tiskos10_desc"
+                            android:textSize="11sp" />
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btnCartTk1"
-                        android:layout_width="wrap_content"
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="15dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/quicksand_bold"
+                                android:gravity="bottom|start"
+                                android:text="@string/txt_real_sign"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtTiskosValor1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/quicksand_bold"
+                                android:gravity="bottom|end"
+                                android:text="@string/txt_tiskos10_valor"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/btnCartTiskos1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="showQuantityItem"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
-                        />
+                        android:orientation="horizontal"
+                        android:padding="5dp"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="15dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:text="@string/btn_show_prod"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_weight="0"
+                            android:background="@drawable/ic_add_to_cart"
+                            android:contentDescription="@string/btn_show_prod"
+                            android:textAllCaps="false" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/prod_separator" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lnTiskos2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="20dp"
                 android:gravity="end|bottom"
                 android:orientation="horizontal"
                 android:paddingStart="10dp"
@@ -1496,8 +1561,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo"
-                    />
+                    tools:src="@drawable/caketisko"
+                    android:layout_gravity="center_vertical"/>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -1507,49 +1572,113 @@
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp">
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txtTisko4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="TextView"
-                        />
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txtTisko5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="TextView"
-                        />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtTiskosTitle2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:text="@string/txt_tiskos20"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txtTisko6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="TextView"
-                        />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtTiskosDesc2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/quicksand_semi_bold"
+                            android:text="@string/txt_tiskos20_desc"
+                            android:textSize="11sp" />
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btnCartTk2"
-                        android:layout_width="wrap_content"
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="15dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/quicksand_bold"
+                                android:gravity="bottom|start"
+                                android:text="@string/txt_real_sign"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtTiskosValor2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/quicksand_bold"
+                                android:gravity="bottom|end"
+                                android:text="@string/txt_tiskos20_valor"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/btnCartTiskos2"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="showQuantityItem"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
-                        />
+                        android:orientation="horizontal"
+                        android:padding="5dp"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="15dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:text="@string/btn_show_prod"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_weight="0"
+                            android:background="@drawable/ic_add_to_cart"
+                            android:contentDescription="@string/btn_show_prod"
+                            android:textAllCaps="false" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/prod_separator" />
+
             <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lnTiskos3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="20dp"
                 android:gravity="end|bottom"
                 android:orientation="horizontal"
                 android:paddingStart="10dp"
@@ -1560,8 +1689,8 @@
                     android:layout_width="200dp"
                     android:layout_height="200dp"
                     android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo"
-                    />
+                    tools:src="@drawable/caketisko"
+                    android:layout_gravity="center_vertical"/>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -1571,104 +1700,96 @@
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp">
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txtTisko7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="TextView"
-                        />
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txtTisko8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="TextView"
-                        />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtTiskosTitle3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:text="@string/txt_tiskos30"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txtTisko9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="TextView"
-                        />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtTiskosDesc3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/quicksand_semi_bold"
+                            android:text="@string/txt_tiskos30_desc"
+                            android:textSize="11sp" />
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btnCartTk3"
-                        android:layout_width="wrap_content"
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="15dp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/quicksand_bold"
+                                android:gravity="bottom|start"
+                                android:text="@string/txt_real_sign"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtTiskosValor3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/quicksand_bold"
+                                android:gravity="bottom|end"
+                                android:text="@string/txt_tiskos30_valor"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/btnCartTiskos3"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
                         android:background="@drawable/btn_round_corner"
-                        android:onClick="showQuantityItem"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
-                        />
+                        android:orientation="horizontal"
+                        android:padding="5dp"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="15dp">
 
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/quicksand_bold"
+                            android:text="@string/btn_show_prod"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_weight="0"
+                            android:background="@drawable/ic_add_to_cart"
+                            android:contentDescription="@string/btn_show_prod"
+                            android:textAllCaps="false" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="40dp"
-                android:gravity="end|bottom"
-                android:orientation="horizontal"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/imgTiskos4"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:contentDescription="@string/app_name"
-                    tools:src="@drawable/festa_doggo"
-                    />
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="end|bottom"
-                    android:orientation="vertical"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txtTisko10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="TextView"
-                        />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txtTisko11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="TextView"
-                        />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txtTisko12"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="TextView"
-                        />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btnCartTk4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
-                        android:background="@drawable/btn_round_corner"
-                        android:onClick="showQuantityItem"
-                        android:text="@string/btn_show_prod"
-                        android:textAllCaps="false"
-                        />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
