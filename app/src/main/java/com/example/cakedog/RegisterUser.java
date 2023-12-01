@@ -20,6 +20,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatEditText;
 
 import com.example.cakedog.ConnectionToSQL;
 import java.sql.SQLException;
@@ -58,9 +60,9 @@ public class RegisterUser extends AppCompatActivity {
     };
 
     //ConnectionToSQL connect = new ConnectionToSQL();
-    EditText txtName, cpf, phone, address, neibhood, postalCode, city, email, pw;
+    private AppCompatEditText txtName, cpf, phone, address, neibhood, postalCode, city, email, pw;
     private DatePickerDialog datePickerDialog;
-    private Button btnDate, btnUF, btnSave;
+    private AppCompatButton btnDate, btnUF, btnSave;
 
     @SuppressLint("SourceLockedOrientationActivity")
     @Override
@@ -117,6 +119,18 @@ public class RegisterUser extends AppCompatActivity {
                 openDatePicker();
             }
         });
+        pw.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if(b) {
+                    if(pw.getText().toString().trim().length() < 8) {
+                        pw.setError("Senha não pode ter menos que 8 caracteres");
+                    } else {
+                        pw.setError(null);
+                    }
+                }
+            }
+        });
     }
 
     public void doRegister() {
@@ -136,16 +150,17 @@ public class RegisterUser extends AppCompatActivity {
                     "VALUES('" + strName + "','" + strCPF + "','" + strPhone + "','" + strEmail + "','" + strPw + "', GETDATE(), 1, NULL,'" + strBirthDate + "', 0)";
             sqlRegEnd = "INSERT INTO endereco_user(id_user, endereco, bairro, cep, cidade, estado_uf, dt_cadastro, tipo_endereco) " +
                     "VALUES(@@IDENTITY, '" + strAddress + "', '" + strNebhood + "', '" + strPostalCode + "', '" + strCity + "', '" + ufSelected + "', GETDATE(), 'Principal')";
-            if(!strName.isEmpty() && !strCPF.isEmpty() && !strPhone.isEmpty() && !strAddress.isEmpty() && !strNebhood.isEmpty() && !strPostalCode.isEmpty() && !strCity.isEmpty() && !strEmail.isEmpty() && !strPw.isEmpty() && !strBirthDate.isEmpty() && ufSelected != null) {
+            if(!strName.isEmpty() && !strCPF.isEmpty() && !strPhone.isEmpty() && !strAddress.isEmpty() && !strNebhood.isEmpty() && !strPostalCode.isEmpty() && !strCity.isEmpty() && !strEmail.isEmpty() && !strPw.isEmpty() && strPw.length() > 7 && !strBirthDate.isEmpty() && ufSelected != null) {
                 try {
                     ConnectionToSQL.reSet = ConnectionToSQL.stmt.executeQuery("SELECT COUNT(*) AS resultado FROM usuario WHERE email_user = '" + strEmail + "'");
-                    if (ConnectionToSQL.reSet.next()) {
+                    if (!ConnectionToSQL.reSet.next()) {
                         ConnectionToSQL.stmt.executeUpdate(sqlRegUser);
                         ConnectionToSQL.stmt.executeUpdate(sqlRegEnd);
                         Toast.makeText(this, "Cadastro feito com sucesso", Toast.LENGTH_LONG).show();
                         finish();
                     } else {
-                        Toast.makeText(this, "Não cadastrado", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "E-mail já cadastrado", Toast.LENGTH_LONG).show();
+                        email.requestFocus();
                     }
                 } catch (SQLException ex) {
                     Toast.makeText(this, ex.toString(), Toast.LENGTH_LONG).show();

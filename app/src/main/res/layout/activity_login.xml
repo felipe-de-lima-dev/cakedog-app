@@ -8,7 +8,7 @@
     android:background="@color/light_bege"
     tools:context=".LoginUser">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/app_name">
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -36,7 +36,7 @@
                 android:layout_gravity="center_horizontal"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
@@ -47,7 +47,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 />
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/txtUser"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
@@ -68,7 +68,7 @@
                 android:fontFamily="@font/quicksand_regular"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -79,7 +79,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 />
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/txtPw"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
@@ -112,7 +112,7 @@
                 android:layout_marginTop="100dp"
                 android:gravity="center_horizontal">
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnToRegister"
                     android:layout_width="280dp"
                     android:layout_height="60dp"
@@ -125,7 +125,7 @@
                     android:textSize="28sp"
                     />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnEnter"
                     android:layout_width="280dp"
                     android:layout_height="60dp"
@@ -141,8 +141,8 @@
 
             </LinearLayout>
 
-        </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

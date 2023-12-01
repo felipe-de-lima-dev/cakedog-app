@@ -103,8 +103,17 @@
     <string name="txt_tiskos30">Pacote de Caketiskos 30 und</string>
     <string name="txt_tiskos30_desc">Um pacote de petiscos para seu cão com 30 unidades cada.</string>
     <string name="txt_tiskos30_valor">50,00</string>
-</resources>
-<!--
+    <string name="txt_hello">Olá, Usuário</string>
+    <string name="txt_email_user">example@gmail.com</string>
+    <string name="btn_delete_acc">Excluir conta</string>
+    <string name="btn_exit">Sair</string>
+    <string name="txt_whey">Bolo WheyProtein</string>
+    <string name="txt_puppy">Bolo Puppy</string>
+    <string name="txt_diet">Bolo Diet</string>
+    <string name="txt_recipe">Ingredientes: Na massa, peito de frango, cenoura, azeite de oliva, ovos, farinha de arroz, farinha de aveia sem glúten. Na cobertura, cream cheese pet.</string>
+    <string name="txt_observation">Observação:</string>
+    <string name="txt_obs_hint">Deixe alguma observação</string>
+</resources><!--
     Poodle, Lhasa, Golden, Labrador, Doberman, Buldogue, Pug, Rottveiler, Pastor-Alemão, Pitbull, Chow Chow ou Nenhum
     Azul, Rosa, Vermelho ou Amarelo
 -->

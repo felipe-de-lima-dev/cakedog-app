@@ -15,12 +15,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatEditText;
 
 import java.sql.SQLException;
 
 public class LoginUser extends AppCompatActivity {
-    private EditText txtUser, txtPw;
-    private Button btnEnter, btnToRegister;
+    private AppCompatEditText txtUser, txtPw;
+    private AppCompatButton btnEnter, btnToRegister;
     ConnectionToSQL connect = new ConnectionToSQL();
     UserInformations userInfo = new UserInformations();
 

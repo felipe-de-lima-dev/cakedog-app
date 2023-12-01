@@ -8,7 +8,7 @@
     android:background="@color/light_bege"
     tools:context=".RegisterUser">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -17,14 +17,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center_horizontal">
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/title_reg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
                 app:layout_constraintTop_toBottomOf="@id/title_reg"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -62,7 +62,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 />
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/txtName"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
@@ -78,7 +78,7 @@
                 android:maxLength="40"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -89,7 +89,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 />
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/txtCPF"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
@@ -105,7 +105,7 @@
                 android:maxLength="15"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -116,7 +116,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnBirthDate"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
@@ -131,7 +131,7 @@
                 android:fontFamily="@font/quicksand_regular"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -142,7 +142,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 />
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/txtPhone"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
@@ -158,7 +158,7 @@
                 android:maxLength="14"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -169,7 +169,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 />
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/txtAddress"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
@@ -185,7 +185,7 @@
                 android:maxLength="50"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -196,7 +196,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 />
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/txtNeighborhood"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
@@ -212,7 +212,7 @@
                 android:maxLength="30"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -223,7 +223,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 />
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/txtCEP"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
@@ -239,7 +239,7 @@
                 android:maxLength="9"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -250,7 +250,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 />
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/txtCity"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
@@ -266,7 +266,7 @@
                 android:maxLength="30"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -277,7 +277,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnUF"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
@@ -292,7 +292,7 @@
                 android:fontFamily="@font/quicksand_regular"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -303,7 +303,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 />
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/txtEmail"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
@@ -319,7 +319,7 @@
                 android:maxLength="35"
                 />
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -330,7 +330,7 @@
                 android:fontFamily="@font/quicksand_medium"
                 />
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/txtPw"
                 android:layout_width="350dp"
                 android:layout_height="60dp"
@@ -343,12 +343,11 @@
                 android:paddingEnd="12dp"
                 android:textSize="20sp"
                 android:fontFamily="@font/quicksand_regular"
-                android:maxLength="8"
-                />
+                android:maxLength="15" />
 
 
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSave"
                 android:layout_width="280dp"
                 android:layout_height="60dp"
@@ -363,8 +362,8 @@
                 android:fontFamily="@font/quicksand_bold"
                 />
 
-        </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

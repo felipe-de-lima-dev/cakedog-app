@@ -1,24 +1,57 @@
 package com.example.cakedog;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
-    private ArrayList<Product> productToCart = new ArrayList<>();
-    private LayoutInflater inflater;
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
-    @NonNull
+        public AppCompatTextView txtCartTitle, txtCartValor;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+
+            txtCartTitle = (AppCompatTextView) itemView.findViewById(R.id.txtCartTitle);
+            txtCartValor = (AppCompatTextView) itemView.findViewById(R.id.txtCartValor);
+        }
+    }
+
+    private List<Product> productToCart;
+
+    public CartAdapter(List<Product> product) {
+        productToCart = product;
+    }
+
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.list_item, parent, false);
-        return new ViewHolder(view);
+    public CartAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Context context = parent.getContext();
+        LayoutInflater inflater = LayoutInflater.from(context);
+
+        View contactView = inflater.inflate(R.layout.list_item, parent, false);
+
+        return new ViewHolder(contactView);
+    }
+
+    @Override
+    public void onBindViewHolder(CartAdapter.ViewHolder holder, int position) {
+        Product product = productToCart.get(position);
+
+        AppCompatTextView txtCartTitle, txtCartValor;
+        txtCartTitle = holder.txtCartTitle;
+        txtCartValor = holder.txtCartValor;
+        txtCartTitle.setText(product.getProductName());
+        txtCartValor.setText(String.format(Double.toString(product.getProductPrice())));
     }
 
     @Override
@@ -26,34 +59,4 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         return productToCart.size();
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        /*
-        Product currentItem = productToCart.get(position);
-        holder.itemProductName.setText(currentItem.getProductName());
-        holder.itemQuantity.setText(String.valueOf(currentItem.getProductQuantity()));
-        holder.itemPrice.setText(String.format("$%.2f", currentItem.getProductPrice()));
-
-        holder.removeButton.setOnClickListener(v -> {
-            shoppingCart.remove(position);
-            notifyItemRemoved(position);
-        });
-
-        holder.updateButton.setOnClickListener(v -> {
-            int newQuantity = Integer.parseInt(holder.itemQuantity.getText().toString());
-            currentItem.setQuantity(newQuantity);
-            notifyItemChanged(position);
-        });*/
-    }
-
-    // Implemente os métodos necessários, como onCreateViewHolder e onBindViewHolder
-
-    static class ViewHolder extends RecyclerView.ViewHolder {
-        // Adicione as referências aos elementos do layout do item aqui
-
-        ViewHolder(View itemView) {
-            super(itemView);
-            // Inicialize as referências aos elementos do layout do item aqui
-        }
-    }
 }

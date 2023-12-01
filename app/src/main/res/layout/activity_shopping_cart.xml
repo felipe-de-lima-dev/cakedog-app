@@ -128,17 +128,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-<!--
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/cartRecyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:padding="10dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
 
 
                 </androidx.recyclerview.widget.RecyclerView>
--->
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -146,6 +146,36 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="30dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/txt_observation"
+                    android:textSize="24sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/quicksand_semi_bold"
+                    android:gravity="start"
+                    android:layout_gravity="center"
+                    />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/txtObservation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:autofillHints="true"
+                    android:background="@drawable/custom_input"
+                    android:inputType="textMultiLine"
+                    android:lines="6"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/quicksand_regular"
+                    android:maxLength="100"
+                    android:gravity="top|start"
+                    android:hint="@string/txt_obs_hint"
+                    />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"

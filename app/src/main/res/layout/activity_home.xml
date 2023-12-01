@@ -876,35 +876,35 @@
                 android:orientation="vertical"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp">
-                
+
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_marginBottom="20dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/quicksand_semi_bold"
                     android:text="@string/txt_title_simple_"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:layout_marginBottom="20dp"/>
+                    android:textSize="24sp" />
 
                 <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/spnFlavor"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
+                    android:layout_marginBottom="20dp"
+                    android:contentDescription="@string/txt_title_simple"
                     android:fontFamily="@font/quicksand_semi_bold"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:contentDescription="@string/txt_title_simple"
-                    android:layout_marginBottom="20dp"/>
+                    android:textSize="24sp" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/product_border"
                     android:orientation="horizontal"
                     android:paddingStart="40dp"
-                    android:paddingEnd="40dp"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/product_border">
+                    android:paddingEnd="40dp">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/imgPersFlavor"
@@ -916,9 +916,8 @@
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/prod_separator"
                         android:layout_marginStart="5dp"
-                        />
+                        android:background="@drawable/prod_separator" />
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
@@ -948,8 +947,7 @@
                             <Space
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:layout_weight="1"
-                                />
+                                android:layout_weight="1" />
 
                             <androidx.appcompat.widget.LinearLayoutCompat
                                 android:layout_width="match_parent"
@@ -990,11 +988,11 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@drawable/prod_separator"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"/>
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/prod_separator" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/lnForm"
@@ -1007,43 +1005,43 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_marginBottom="20dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/quicksand_semi_bold"
                     android:text="@string/txt_choose_form"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:layout_marginBottom="20dp"/>
+                    android:textSize="24sp" />
 
                 <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/spnForm"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
+                    android:layout_marginBottom="20dp"
+                    android:contentDescription="@string/txt_title_simple"
                     android:fontFamily="@font/quicksand_semi_bold"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:contentDescription="@string/txt_title_simple"
-                    android:layout_marginBottom="20dp"/>
+                    android:textSize="24sp" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/product_border"
                     android:orientation="horizontal"
                     android:paddingStart="40dp"
-                    android:paddingEnd="40dp"
-                    android:background="@drawable/product_border">
+                    android:paddingEnd="40dp">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/imgPersForm"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
                         android:contentDescription="@string/app_name"
-                        tools:src="@drawable/bolo_simples_frango"/>
+                        tools:src="@drawable/bolo_simples_frango" />
 
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/prod_separator"
-                        android:layout_marginStart="5dp"/>
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/prod_separator" />
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
@@ -1073,7 +1071,7 @@
                             <Space
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1" />
 
                             <androidx.appcompat.widget.LinearLayoutCompat
                                 android:layout_width="match_parent"
@@ -1088,7 +1086,7 @@
                                     android:gravity="bottom|start"
                                     android:text="@string/txt_plus_real"
                                     android:textColor="@color/black"
-                                    android:textSize="22sp"/>
+                                    android:textSize="22sp" />
 
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:id="@+id/txtPersFormValor"
@@ -1099,7 +1097,7 @@
                                     android:gravity="bottom|end"
                                     android:text="@string/txt_subtotal"
                                     android:textColor="@color/black"
-                                    android:textSize="22sp"/>
+                                    android:textSize="22sp" />
 
                             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -1114,11 +1112,11 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@drawable/prod_separator"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"/>
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/prod_separator" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/lnColor"
@@ -1131,22 +1129,22 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_marginBottom="20dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/quicksand_semi_bold"
                     android:text="@string/txt_choose_color"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:layout_marginBottom="20dp"/>
+                    android:textSize="24sp" />
 
                 <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/spnColor"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
+                    android:layout_marginBottom="20dp"
+                    android:contentDescription="@string/txt_title_simple"
                     android:fontFamily="@font/quicksand_semi_bold"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:contentDescription="@string/txt_title_simple"
-                    android:layout_marginBottom="20dp"/>
+                    android:textSize="24sp" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -1165,8 +1163,8 @@
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/prod_separator"
-                        android:layout_marginStart="5dp" />
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/prod_separator" />
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
@@ -1237,11 +1235,11 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@drawable/prod_separator"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"/>
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/prod_separator" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/lnPhoto"
@@ -1254,22 +1252,22 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_marginBottom="20dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/quicksand_semi_bold"
                     android:text="@string/txt_choose_photo"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:layout_marginBottom="20dp"/>
+                    android:textSize="24sp" />
 
                 <androidx.appcompat.widget.AppCompatSpinner
                     android:id="@+id/spnPhoto"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
+                    android:layout_marginBottom="20dp"
+                    android:contentDescription="@string/txt_title_simple"
                     android:fontFamily="@font/quicksand_semi_bold"
                     android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:contentDescription="@string/txt_title_simple"
-                    android:layout_marginBottom="20dp"/>
+                    android:textSize="24sp" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -1288,8 +1286,8 @@
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/prod_separator"
-                        android:layout_marginStart="5dp" />
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/prod_separator" />
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
@@ -1360,11 +1358,11 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@drawable/prod_separator"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"/>
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/prod_separator" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/btnCartPers"
@@ -1854,7 +1852,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:fontFamily="@font/quicksand_bold"
-                            android:text="Bolo WheyProtein"
+                            android:text="@string/txt_whey"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
@@ -1864,7 +1862,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/quicksand_semi_bold"
-                            android:text="Ingredientes: Na massa, peito de frango, cenoura, azeite de oliva, ovos, farinha de arroz, farinha de aveia sem glúten. Na cobertura, cream cheese pet."
+                            android:text="@string/txt_recipe"
                             android:textSize="11sp" />
 
                         <Space
@@ -1883,7 +1881,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/quicksand_bold"
                                 android:gravity="bottom|start"
-                                android:text="R$"
+                                android:text="@string/txt_real_sign"
                                 android:textColor="@color/black"
                                 android:textSize="16sp" />
 
@@ -1894,7 +1892,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/quicksand_bold"
                                 android:gravity="bottom|end"
-                                android:text="28,00"
+                                android:text="65,00"
                                 android:textColor="@color/black"
                                 android:textSize="16sp" />
 
@@ -1978,7 +1976,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:fontFamily="@font/quicksand_bold"
-                            android:text="Bolo Puppy"
+                            android:text="@string/txt_puppy"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
@@ -1988,7 +1986,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/quicksand_semi_bold"
-                            android:text="Ingredientes: Na massa, peito de frango, cenoura, azeite de oliva, ovos, farinha de arroz, farinha de aveia sem glúten. Na cobertura, cream cheese pet."
+                            android:text="@string/txt_recipe"
                             android:textSize="11sp" />
 
                         <Space
@@ -2007,7 +2005,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/quicksand_bold"
                                 android:gravity="bottom|start"
-                                android:text="R$"
+                                android:text="@string/txt_real_sign"
                                 android:textColor="@color/black"
                                 android:textSize="16sp" />
 
@@ -2018,7 +2016,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/quicksand_bold"
                                 android:gravity="bottom|end"
-                                android:text="28,00"
+                                android:text="62,00"
                                 android:textColor="@color/black"
                                 android:textSize="16sp" />
 
@@ -2102,7 +2100,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
                             android:fontFamily="@font/quicksand_bold"
-                            android:text="Bolo Diet"
+                            android:text="@string/txt_diet"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
@@ -2112,7 +2110,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/quicksand_semi_bold"
-                            android:text="Ingredientes: Na massa, peito de frango, cenoura, azeite de oliva, ovos, farinha de arroz, farinha de aveia sem glúten. Na cobertura, cream cheese pet."
+                            android:text="@string/txt_recipe"
                             android:textSize="11sp" />
 
                         <Space
@@ -2131,7 +2129,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/quicksand_bold"
                                 android:gravity="bottom|start"
-                                android:text="R$"
+                                android:text="@string/txt_real_sign"
                                 android:textColor="@color/black"
                                 android:textSize="16sp" />
 
@@ -2142,7 +2140,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/quicksand_bold"
                                 android:gravity="bottom|end"
-                                android:text="28,00"
+                                android:text="65,00"
                                 android:textColor="@color/black"
                                 android:textSize="16sp" />
 
@@ -2186,85 +2184,5 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.core.widget.NestedScrollView>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/alterQuantityItem"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/toolbar2"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="gone"
-        android:background="@drawable/product_border">
-
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/btn_quantity_style">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnMinus"
-                android:layout_width="5dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn_quantity_style"
-                android:fontFamily="@font/quicksand_bold"
-                android:text="@string/btn_minus"
-                android:textAlignment="center"
-                android:textSize="30sp"
-                android:onClick="minusOne"
-                />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txtQuantityItem"
-                android:layout_width="20dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/quicksand_bold"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="@string/txt_quantity"
-                android:textColor="@color/black"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnPlus"
-                android:layout_width="5dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/btn_quantity_style"
-                android:fontFamily="@font/quicksand_bold"
-                android:text="@string/btn_plus"
-                android:textSize="30sp"
-                android:onClick="plusOne"
-                />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnAddshowQuantityItem"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="@string/btn_show_prod"
-                android:onClick="addQtdeToCart"
-                android:fontFamily="@font/quicksand_bold"
-                android:background="@drawable/btn_quantity_style"
-                />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
